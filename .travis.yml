@@ -1,0 +1,16 @@
+language: cpp
+matrix:
+  include:
+    - os: linux
+      dist: trusty #modify when xenial becomes available
+      #sudo: true
+      compiler: gcc
+script:
+- rm -rf build
+- cmake -H. -Bbuild
+- cmake --build build
+- cmake --build build --target test
+- cmake --build build --target package
+deploy:
+  skip_cleanup: true
+
