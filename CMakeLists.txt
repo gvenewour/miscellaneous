@@ -6,21 +6,27 @@ configure_file("version.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/version.h")
 
 set(LIB "${PROJECT_NAME}")
 set(EXECUTABLE "${PROJECT_NAME}-cli")
-#set(TEST_MAIN "test_main-cli")
+set(TEST_MAIN "test_main-cli")
 
 
 add_library(${LIB} "version.h" "lib.h" "lib.cpp")
 add_executable(${EXECUTABLE} "main.cpp")
-
 target_link_libraries(${EXECUTABLE} ${LIB})
 
-#add_executable(${TEST_MAIN} "test_main.cpp")
+add_subdirectory(ext)
+enable_testing()
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}" "${gtest_SOURCE_DIR}/include" ${gtest_SOURCE_DIR})
+
+add_executable(${TEST_MAIN} "test/test_main.cpp")
+target_link_libraries(${TEST_MAIN} ${LIB} gtest_main)
 
 set_target_properties(${EXECUTABLE} ${TEST_MAIN} PROPERTIES
                       CXX_STANDARD 14
                       CXX_STANDARD_REQUIRED ON
                       COMPILE_OPTIONS -Wpedantic -Wall -Wextra
                      )
+
+add_test(HelloworldTests ${TEST_MAIN})
 
 if (UNIX)
     install(TARGETS ${EXECUTABLE} RUNTIME DESTINATION bin)
@@ -45,6 +51,7 @@ if (UNIX)
 
     #because who cares about name conventions?
     set(CPACK_DEBIAN_FILE_NAME "${CPACK_PACKAGE_NAME}_${CUSTOM_PACKAGE_SUFFIX}.deb")
+
 endif(UNIX)
 
 include(CPack)
