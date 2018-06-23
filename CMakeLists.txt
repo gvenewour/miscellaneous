@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.9)
 
-project(helloworld VERSION 0.0.2)
+set(VERSION_PATCH $ENV{TRAVIS_BUILD_NUMBER})
+
+if(NOT DEFINED VERSION_PATCH)
+ set(VERSION_PATCH 1)
+endif(NOT DEFINED VERSION_PATCH)
+
+project(helloworld VERSION 0.0.${VERSION_PATCH})
 
 configure_file("version.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/version.h")
 
@@ -12,7 +18,6 @@ set(TEST_MAIN "test_main-cli")
 add_library(${LIB} "version.h" "lib.h" "lib.cpp")
 add_executable(${EXECUTABLE} "main.cpp")
 target_link_libraries(${EXECUTABLE} ${LIB})
-
 
 
 #Google test example section
@@ -41,7 +46,6 @@ if (UNIX)
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "alla@host.somedomain")
     set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "There is no description for a helloworld app")
 
-    #we do not use cross-compiling
     if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
         set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE amd64)
     elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "i686")
