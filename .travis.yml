@@ -3,7 +3,7 @@ matrix:
   include:
     - os: linux
       dist: trusty #modify when xenial becomes available
-      sudo: true
+      #sudo: true
       compiler: gcc
 script:
 - rm -rf build
@@ -14,5 +14,5 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  - curl -T helloworld-cli_0.0.$TRAVIS_BUILD_NUMBER_amd64.deb -ugvenewour:$BINTRAY_API_KEY "https://api.bintray.com/content/gvenewour/miscellaneous/helloworld-cli_0.0.$TRAVIS_BUILD_NUMBER_amd64.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-
+  script:
+  - curl -T $TRAVIS_BUILD_DIR/build/helloworld-cli_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb -ugvenewour:$BINTRAY_API_KEY "https://api.bintray.com/content/gvenewour/miscellaneous/helloworld-cli/$TRAVIS_BUILD_NUMBER/helloworld-cli_0.0.$TRAVIS_BUILD_NUMBER_amd64.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
