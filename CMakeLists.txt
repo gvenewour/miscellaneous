@@ -1,22 +1,31 @@
 cmake_minimum_required(VERSION 3.9)
 
-project(helloworld VERSION 0.0.1)
+project(helloworld VERSION 0.0.2)
+
+configure_file("version.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/version.h")
+
+set(LIB "${PROJECT_NAME}")
+set(EXECUTABLE "${PROJECT_NAME}-cli")
+#set(TEST_MAIN "test_main-cli")
 
 
-set(MAIN_TARGET "${PROJECT_NAME}-cli")
+add_library(${LIB} "version.h" "lib.h" "lib.cpp")
+add_executable(${EXECUTABLE} "main.cpp")
 
-add_executable(${MAIN_TARGET} "main.cpp")
+target_link_libraries(${EXECUTABLE} ${LIB})
 
-set_target_properties(${MAIN_TARGET} PROPERTIES
+#add_executable(${TEST_MAIN} "test_main.cpp")
+
+set_target_properties(${EXECUTABLE} ${TEST_MAIN} PROPERTIES
                       CXX_STANDARD 14
                       CXX_STANDARD_REQUIRED ON
                       COMPILE_OPTIONS -Wpedantic -Wall -Wextra
                      )
 
 if (UNIX)
-    install(TARGETS ${MAIN_TARGET} RUNTIME DESTINATION bin)
+    install(TARGETS ${EXECUTABLE} RUNTIME DESTINATION bin)
 
-    set(CPACK_PACKAGE_NAME ${MAIN_TARGET})
+    set(CPACK_PACKAGE_NAME ${EXECUTABLE})
 
     set(CPACK_GENERATOR "DEB")
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "alla@host.somedomain")
@@ -39,5 +48,3 @@ if (UNIX)
 endif(UNIX)
 
 include(CPack)
-
-
