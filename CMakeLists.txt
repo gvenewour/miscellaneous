@@ -13,8 +13,12 @@ add_library(${LIB} "version.h" "lib.h" "lib.cpp")
 add_executable(${EXECUTABLE} "main.cpp")
 target_link_libraries(${EXECUTABLE} ${LIB})
 
-add_subdirectory(ext)
+
+
+#Google test example section
 enable_testing()
+
+add_subdirectory(ext)
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}" "${gtest_SOURCE_DIR}/include" ${gtest_SOURCE_DIR})
 
 add_executable(${TEST_MAIN} "test/test_main.cpp")
@@ -26,7 +30,7 @@ set_target_properties(${EXECUTABLE} ${TEST_MAIN} PROPERTIES
                       COMPILE_OPTIONS -Wpedantic -Wall -Wextra
                      )
 
-add_test(HelloworldTests ${TEST_MAIN})
+add_test(version_validation ${TEST_MAIN})
 
 if (UNIX)
     install(TARGETS ${EXECUTABLE} RUNTIME DESTINATION bin)
@@ -37,6 +41,7 @@ if (UNIX)
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "alla@host.somedomain")
     set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "There is no description for a helloworld app")
 
+    #we do not use cross-compiling
     if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
         set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE amd64)
     elseif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "i686")
