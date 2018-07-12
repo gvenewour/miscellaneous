@@ -1,11 +1,12 @@
 #include <iostream>
 #include "lib.h"
+#include "h2_ip_filter.h"
+
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    std::cout << "Hello World!" << std::endl;
-    std::cout << "Version: " << version() << std::endl;
+    ip_filter();
     return 0;
 }

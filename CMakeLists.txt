@@ -8,15 +8,26 @@ endif(NOT DEFINED VERSION_PATCH)
 
 project(helloworld VERSION 0.0.${VERSION_PATCH})
 
-configure_file("version.h.in" "${CMAKE_CURRENT_SOURCE_DIR}/version.h")
+configure_file("version.h.in" "${CMAKE_CURRENT_BINARY_DIR}/version.h")
 
 set(LIB "${PROJECT_NAME}")
-set(EXECUTABLE "${PROJECT_NAME}-cli")
+set(EXECUTABLE "ip_filter")
+set(EXECUTABLE_PACKAGE_NAME "${PROJECT_NAME}-cli")
 set(TEST_MAIN "test_main-cli")
 
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include/"
+                    "${CMAKE_CURRENT_BINARY_DIR}")
+file (GLOB HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_timus.h"
+                   "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_ip_filter.h"
+                   "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_constexpr.h")
 
-add_library(${LIB} "version.h" "lib.h" "lib.cpp")
-add_executable(${EXECUTABLE} "main.cpp")
+#file (GLOB SRC "${CMAKE_CURRENT_SOURCE_DIR}/h2_ip_filter.cpp")
+
+file(GLOB LIB_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/lib.h")
+file(GLOB LIB_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/lib.cpp")
+
+add_library(${LIB} "version.h" ${LIB_HEADERS} ${LIB_SRC_FILES})
+add_executable(${EXECUTABLE} "main.cpp"  ${HEADERS})
 target_link_libraries(${EXECUTABLE} ${LIB})
 
 
@@ -24,7 +35,7 @@ target_link_libraries(${EXECUTABLE} ${LIB})
 enable_testing()
 
 add_subdirectory(ext)
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}" "${gtest_SOURCE_DIR}/include" ${gtest_SOURCE_DIR})
+include_directories("${gtest_SOURCE_DIR}/include" ${gtest_SOURCE_DIR})
 
 add_executable(${TEST_MAIN} "test/test_main.cpp")
 target_link_libraries(${TEST_MAIN} ${LIB} gtest_main)
@@ -40,7 +51,7 @@ add_test(version_validation ${TEST_MAIN})
 if (UNIX)
     install(TARGETS ${EXECUTABLE} RUNTIME DESTINATION bin)
 
-    set(CPACK_PACKAGE_NAME ${EXECUTABLE})
+    set(CPACK_PACKAGE_NAME ${EXECUTABLE_PACKAGE_NAME})
 
     set(CPACK_GENERATOR "DEB")
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "alla@host.somedomain")
