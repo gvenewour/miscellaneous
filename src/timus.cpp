@@ -59,13 +59,13 @@ void task_1785() {
 }
 
 void task_1787() {
-    unsigned short k{0}, n{0}, left{0};
+    uint16_t k{0}, n{0}, left{0};
     std::cin >> k >> n;
 
-    std::vector<unsigned short> cars;
+    std::vector<uint16_t> cars;
 
-    std::copy(std::istream_iterator<unsigned short>(std::cin),
-              std::istream_iterator<unsigned short>(),
+    std::copy(std::istream_iterator<uint16_t>(std::cin),
+              std::istream_iterator<uint16_t>(),
               std::back_inserter(cars));
 
     for (uint16_t i = 0; i < n; ++i) {

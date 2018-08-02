@@ -17,17 +17,20 @@ set(TEST_MAIN "test_main-cli")
 
 include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include/"
                     "${CMAKE_CURRENT_BINARY_DIR}")
-file (GLOB HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_timus.h"
-                   "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_ip_filter.h"
-                   "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_constexpr.h")
 
-#file (GLOB SRC "${CMAKE_CURRENT_SOURCE_DIR}/h2_ip_filter.cpp")
+file (GLOB HEADERS  "${CMAKE_CURRENT_SOURCE_DIR}/include/homework2/ip_address.h"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/include/homework2/ip_pool.h"
+                    "${CMAKE_CURRENT_SOURCE_DIR}/include/homework2/constexpr.h")
+
+file(GLOB SRC "${CMAKE_CURRENT_SOURCE_DIR}/src/timus.cpp"
+              "${CMAKE_CURRENT_SOURCE_DIR}/src/homework2/ip_address.cpp"
+              "${CMAKE_CURRENT_SOURCE_DIR}/src/homework2/ip_pool.cpp")
 
 file(GLOB LIB_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/lib.h")
 file(GLOB LIB_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/lib.cpp")
 
 add_library(${LIB} "version.h" ${LIB_HEADERS} ${LIB_SRC_FILES})
-add_executable(${EXECUTABLE} "main.cpp"  ${HEADERS})
+add_executable(${EXECUTABLE} "main.cpp"  ${HEADERS} ${SRC})
 target_link_libraries(${EXECUTABLE} ${LIB})
 
 
