@@ -1,3 +1,5 @@
+git:
+  submodules: false
 language: cpp
 matrix:
   include:
@@ -16,6 +18,8 @@ before_install:
   # C++14
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
+
+  - git submodule update --init --remote --recursive
 #  - sudo apt-get install -y libgtest-dev #valgrind
 
 install:
