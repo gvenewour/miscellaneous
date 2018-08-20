@@ -2,17 +2,23 @@ language: cpp
 matrix:
   include:
     - os: linux
-      dist: trusty #modify when xenial becomes available
-      #sudo: true
+      dist: trusty
       compiler: gcc
-script:
-- rm -rf build
-- cmake -H. -Bbuild
-- cmake --build build
-- cmake --build build --target test
-- cmake --build build --target package
+      env:
+        - COMPILER=g++-5
+      addons:
+        apt:
+          packages:
+            - g++-5
+            #- valgrind
+#before_install:
+#  - sudo apt-get install -y libgtest-dev #valgrind
+script: "./scripts/build.sh"
+#branches:
+#  only:
+#  - master
 deploy:
   provider: script
   skip_cleanup: true
   script:
-  - curl -T $TRAVIS_BUILD_DIR/build/helloworld-cli_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb -ugvenewour:$BINTRAY_API_KEY "https://api.bintray.com/content/gvenewour/miscellaneous/helloworld-cli/$TRAVIS_BUILD_NUMBER/helloworld-cli_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T $TRAVIS_BUILD_DIR/build/homeworks_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb -ugvenewour:$BINTRAY_API_KEY "https://api.bintray.com/content/gvenewour/miscellaneous/homeworks/$TRAVIS_BUILD_NUMBER/homeworks_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
