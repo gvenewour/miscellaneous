@@ -6,8 +6,6 @@
 namespace homework2 {
     constexpr uint8_t ipv4 = 4;
 
-    IpAddress::IpAddress() : _address{} {}
-
     bool IpAddress::fromString(const std::string &str, char delimiter) {
 
         IpAddress_t address{};
@@ -41,7 +39,7 @@ namespace homework2 {
 
     bool IpAddress::_isValid(const IpAddress_t& address) const {
         return ((address.size() == ipv4)
-                /* && std::all_of(address.begin(), address.end(), [](Octet i) { return i!=0; })*/);
+                /* && std::all_of(address.begin(), address.end(), [](Octet i) { return ????; })*/);
     }
 
     std::ostream& operator<<(std::ostream& str, const IpAddress& address) {

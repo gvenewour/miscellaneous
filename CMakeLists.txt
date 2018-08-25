@@ -30,7 +30,7 @@ if (UNIX)
 
     set(CPACK_GENERATOR "DEB")
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "alla@host.somedomain")
-    set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "There is no description for a helloworld app")
+    set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Otus C++ course homeworks")
 
     if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
         set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE amd64)

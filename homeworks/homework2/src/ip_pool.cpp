@@ -4,21 +4,20 @@
 
 namespace homework2 {
     IpPool::IpPool(std::istream& stream) noexcept{
-        _readPool(std::cin);
+        _readPool(stream);
     }
 
     IpPool::IpPool(const fs::path& path)
     {
         if (fs::is_regular_file(path)) {
-            std::ifstream file{"ip_filter.tsv"};
+            std::ifstream file{path};
             _readPool(file);
         } else
-            throw std::runtime_error("failed to open file "); //TODO: file path should be here
+            throw std::runtime_error("failed to open file ");
     }
 
     void IpPool::_readPool(std::istream &stream) {
         std::string ip{}, skip{};
-
         IpAddress address{};
         while (stream >> ip) {
             if (address.fromString(ip, '.')) {
@@ -28,18 +27,17 @@ namespace homework2 {
         }
     }
 
-
     void IpPool::sortReverse() {
-        std::sort(std::begin(_pool), std::end(_pool), std::greater<>());  //TODO: comparator
+        std::sort(_pool.begin(), _pool.end(), std::greater<>());
     }
 
     void IpPool::print() const {
-        for (const auto &address: _pool) {
+        for (const auto& address: _pool) {
             std::cout << address << "\n";
         }
     }
 
-    void IpPool::printFilteredBy(const Octet &first) const {
+    void IpPool::printBy(const Octet &first) const {
         struct comparator {
             bool operator()(const IpAddress &address, Octet first) const {
                 return address[0] > first;
@@ -51,14 +49,14 @@ namespace homework2 {
         };
 
         //NOTE: At most log2(last - first) + O(1) comparisons
-        auto range = std::equal_range(std::begin(_pool), std::end(_pool), first, comparator{});
+        const auto range = std::equal_range(_pool.cbegin(), _pool.cend(), first, comparator{});
 
         for (auto address = range.first; address != range.second; ++address) {
             std::cout << *address << "\n";
         }
     }
 
-    void IpPool::printFilteredBy(const Octet &first, const Octet &second) const {
+    void IpPool::printBy(const Octet &first, const Octet &second) const {
         struct comparator {
             bool operator()(const IpAddress &address, std::tuple<Octet, Octet> octets) const {
                 Octet first = std::get<0>(octets);
@@ -78,18 +76,18 @@ namespace homework2 {
         };
 
         //NOTE: At most log2(last - first) + O(1) comparisons
-        auto range = std::equal_range(std::begin(_pool), std::end(_pool), std::make_tuple(first, second), comparator{});
+        const auto range = std::equal_range(_pool.cbegin(), _pool.cend(), std::make_tuple(first, second), comparator{});
 
         for (auto address = range.first; address != range.second; ++address) {
             std::cout << *address << "\n";
         }
     }
 
-    void IpPool::printFilteredByAny(const Octet &octet) const {
-        //NOTE: linear search is the suboptimal solution - O(n) comparisons. what is the best one?
+    void IpPool::printByAny(const Octet &octet) const {
+        //NOTE: linear search is a suboptimal solution - O(n) comparisons. what is the best one?
 
         for (const auto &address: _pool) {
-            if ((address[0] == octet) || address[1] == octet || address[2] == octet || address[3] == octet) {
+            if (std::any_of(address.cbegin(), address.cend(), [octet](Octet i){ return (i == octet); })) {
                 std::cout << address << "\n";
             }
         }

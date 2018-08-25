@@ -13,14 +13,13 @@ namespace homework2 {
 
     class IpAddress {
         public:
-            IpAddress();
-            IpAddress(const IpAddress_t& address):_address{address}{};
+            IpAddress() = default;
 
             bool fromString(const std::string &str, char delimiter);
 
             size_t size() const;
 
-            Octet operator [](int i) const {
+            Octet operator [](std::size_t i) const {
                 return _address[i];
             }
 
@@ -31,6 +30,9 @@ namespace homework2 {
             friend bool operator> (const IpAddress& lhs, const IpAddress& rhs) {
                 return (lhs._address > rhs._address);
             }
+
+            IpAddress_t::const_iterator cbegin() const {return _address.cbegin();}
+            IpAddress_t::const_iterator cend() const {return _address.cend();}
 
         private:
             bool _isValid(const IpAddress_t& address) const;

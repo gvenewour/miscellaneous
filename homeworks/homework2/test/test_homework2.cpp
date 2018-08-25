@@ -11,5 +11,5 @@ TEST(Homework2, DefaultPool) {
 TEST(Homework2, ValidPoolFromFile) {
     fs::path path{"ip_filter.tsv"};
     IpPool pool {path};
-    EXPECT_EQ(pool.size(), 1000);
+    ASSERT_EQ(pool.size(), 1000);
 }
