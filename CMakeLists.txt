@@ -6,56 +6,31 @@ if(NOT DEFINED VERSION_PATCH)
  set(VERSION_PATCH 1)
 endif(NOT DEFINED VERSION_PATCH)
 
-project(helloworld VERSION 0.0.${VERSION_PATCH})
+project(homeworks VERSION 0.0.${VERSION_PATCH})
 
-configure_file("version.h.in" "${CMAKE_CURRENT_BINARY_DIR}/version.h")
+set(LIB ${PROJECT_NAME})
 
-set(LIB "${PROJECT_NAME}")
-set(EXECUTABLE "ip_filter")
-set(EXECUTABLE_PACKAGE_NAME "${PROJECT_NAME}-cli")
-set(TEST_MAIN "test_main-cli")
+add_subdirectory(gtest)
 
-include_directories("${CMAKE_CURRENT_SOURCE_DIR}/include/"
-                    "${CMAKE_CURRENT_BINARY_DIR}")
-file (GLOB HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_timus.h"
-                   "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_ip_filter.h"
-                   "${CMAKE_CURRENT_SOURCE_DIR}/include/h2_constexpr.h")
+include_directories("${CMAKE_SOURCE_DIR}/lib/include"
+                    ${CMAKE_BINARY_DIR}     #version.h
+                    ${gtest_SOURCE_DIR}
+                    ${gtest_SOURCE_DIR}/include)
 
-#file (GLOB SRC "${CMAKE_CURRENT_SOURCE_DIR}/h2_ip_filter.cpp")
-
-file(GLOB LIB_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/lib.h")
-file(GLOB LIB_SRC_FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/lib.cpp")
-
-add_library(${LIB} "version.h" ${LIB_HEADERS} ${LIB_SRC_FILES})
-add_executable(${EXECUTABLE} "main.cpp"  ${HEADERS})
-target_link_libraries(${EXECUTABLE} ${LIB})
-
-
-#Google test example section
-enable_testing()
-
-add_subdirectory(ext)
-include_directories("${gtest_SOURCE_DIR}/include" ${gtest_SOURCE_DIR})
-
-add_executable(${TEST_MAIN} "test/test_main.cpp")
-target_link_libraries(${TEST_MAIN} ${LIB} gtest_main)
-
-set_target_properties(${EXECUTABLE} ${TEST_MAIN} PROPERTIES
-                      CXX_STANDARD 14
-                      CXX_STANDARD_REQUIRED ON
-                      COMPILE_OPTIONS -Wpedantic -Wall -Wextra
-                     )
-
-add_test(version_validation ${TEST_MAIN})
+SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/results)
+SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/results)
+SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/results)
 
 if (UNIX)
-    install(TARGETS ${EXECUTABLE} RUNTIME DESTINATION bin)
+    SET(INSTALL_PATH          "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Installation prefix")
+    set(INSTALL_LIB_DIR       lib                       CACHE PATH "Installation directory for libraries")
+    set(INSTALL_BIN_DIR       bin                       CACHE PATH "Installation directory for executables")
 
-    set(CPACK_PACKAGE_NAME ${EXECUTABLE_PACKAGE_NAME})
+    set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
 
     set(CPACK_GENERATOR "DEB")
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "alla@host.somedomain")
-    set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "There is no description for a helloworld app")
+    set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Otus C++ course homeworks")
 
     if(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
         set(CPACK_DEBIAN_PACKAGE_ARCHITECTURE amd64)
@@ -69,9 +44,12 @@ if (UNIX)
 
     set(CUSTOM_PACKAGE_SUFFIX "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}_${CPACK_DEBIAN_PACKAGE_ARCHITECTURE}")
 
-    #because who cares about name conventions?
     set(CPACK_DEBIAN_FILE_NAME "${CPACK_PACKAGE_NAME}_${CUSTOM_PACKAGE_SUFFIX}.deb")
 
 endif(UNIX)
+
+enable_testing()
+add_subdirectory(lib)
+add_subdirectory(homeworks)
 
 include(CPack)
