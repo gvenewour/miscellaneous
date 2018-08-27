@@ -3,14 +3,20 @@ project(homework3)
 set(EXECUTABLE "allocator")
 #set(TEST_HOMEWORK3 "test_${EXECUTABLE}")
 
-#include_directories(include)
+include_directories(include)
 
-#file (GLOB HEADERS_HOMEWORK3 "")
-#file (GLOB SRC_HOMEWORK3 "")
+file (GLOB HEADERS_HOMEWORK3 "include/memory_resource.h"
+                             "include/arena.h"
+                             "include/linear_allocator.h"
+                             "include/custom_list.h"
+                             "include/custom_list.tpp"
+                             "include/custom_list_node.h"
+                             "include/custom_list_iterator.h")
+file (GLOB SRC_HOMEWORK3 "")
 
-#SET (SRC_REQUIRED ${HEADERS_HOMEWORK3} ${SRC_HOMEWORK3})
+set(SRC_REQUIRED ${HEADERS_HOMEWORK3} ${SRC_HOMEWORK3})
 
-add_executable(${EXECUTABLE} "main.cpp")
+add_executable(${EXECUTABLE} "main.cpp" ${SRC_REQUIRED})
 target_link_libraries(${EXECUTABLE} ${LIB})
 
 #add_executable(${TEST_HOMEWORK3} "test/test_homework3.cpp" ${SRC_REQUIRED})

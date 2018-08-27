@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cstddef>
 
 constexpr size_t bin_id(size_t x, bool inRecurse = false) {
