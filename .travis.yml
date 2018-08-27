@@ -23,6 +23,7 @@ before_install:
 #  - sudo apt-get install -y libgtest-dev #valgrind
 
 install:
+  - sudo apt install -y libboost-all-dev  #1.58
   # C++14
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90

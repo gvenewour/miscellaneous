@@ -32,6 +32,14 @@ void fill(T& map) {
     }
 }
 
+template <typename T>
+void print(T& map) {
+    for (const auto& it : map) {
+        std::cout << "[" << it.first << " " << it.second << "] ";
+    }
+    std::cout << "\n";
+}
+
 void exampleCustomAllocator();
 void exampleCustomList();
 void exampleFastPoolAllocator();
@@ -61,10 +69,7 @@ void exampleCustomAllocator() {
     using CustomMap = std::map<Key, Val, std::less<>, homework3::LinearAllocator<std::pair<const Key, Val>, maxCount> >;
     CustomMap map{};
     fill<CustomMap>(map);
-
-    for (const auto& it : map) {
-        std::cout << it.first << " " << it.second << "\n";
-    }
+    print<CustomMap>(map);
 }
 
 void exampleCustomList() {
@@ -75,6 +80,7 @@ void exampleCustomList() {
     for (auto i = 5; i < maxCount; ++i) {
         customList.insert(i);
     }
+    //10th element will cause bad_alloc - the arena is too simple
 
     std::replace(customList.begin(), customList.end(), 100, 4);    //works!
 
@@ -93,10 +99,7 @@ void exampleFastPoolAllocator() {
 
     BoostMap map;
     fill<BoostMap>(map);
-
-    for (const auto& it : map) {
-        std::cout << it.first << " " << it.second << "\n";
-    }
+    print<BoostMap>(map);
 
     boost::singleton_pool<boost::fast_pool_allocator_tag, sizeof(Val)>::purge_memory();
 }
@@ -133,9 +136,10 @@ void exampleShmAllocator()
 
         for (const auto& id: identifiers) {
             shm::ValSet tmp(allocator);
-            tmp.insert(100);
-            tmp.insert(101);
-            tmp.insert(102);
+
+            for (auto i = 100500; i < 100510; ++i) {
+                tmp.insert(i - id);
+            }
 
             buffer->insert(shm::Pair{id, boost::move(tmp)});
             assert(tmp.empty());
@@ -147,7 +151,7 @@ void exampleShmAllocator()
         constexpr uint16_t requiredId = 1984;
         auto id = map->find(requiredId);
         std::cout << "Saved elements for id " << requiredId << ": ";
-        for (auto& val: id->second) {
+        for (const auto& val: id->second) {
             std::cout << val << " ";
         }
         std::cout << "\n";

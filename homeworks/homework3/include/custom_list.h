@@ -34,7 +34,7 @@ namespace homework3 {
             }
 
             iterator end() {
-                return iterator(_last);
+                return iterator(nullptr);
             }
 
 //          const_iterator begin() const

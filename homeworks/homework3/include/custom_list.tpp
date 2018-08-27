@@ -9,7 +9,8 @@
 
     template<typename T, typename A>
     void CustomList<T, A>::insert(T val) {
-        _insert(&_root, val);
+        auto current = _root? &_last : &_root;
+        _insert(current, val);
     }
 
     template<typename T, typename A>
@@ -19,6 +20,10 @@
             tmp->val = val;
             tmp->next = nullptr;
             *node = tmp;
+
+            if (!_last) {
+                _last = _root;
+            }
         } else {
             _insert(&(*node)->next, val);
         }

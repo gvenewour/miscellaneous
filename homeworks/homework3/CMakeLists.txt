@@ -3,6 +3,7 @@ project(homework3)
 set(EXECUTABLE "allocator")
 #set(TEST_HOMEWORK3 "test_${EXECUTABLE}")
 
+set(Boost_USE_STATIC_LIBS ON)
 find_package(Boost 1.58 REQUIRED COMPONENTS system)
 if(Boost_FOUND)
     include_directories(${Boost_INCLUDE_DIRS})
