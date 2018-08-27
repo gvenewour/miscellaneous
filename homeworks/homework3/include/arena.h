@@ -11,11 +11,11 @@ namespace homework3 {
     public:
         explicit SimpleFixedArena(std::size_t bytes) : _buffer(bytes), _index{0} {}
 
-        bool available(std::size_t bytes) const override {
+        inline bool available(std::size_t bytes) const override {
             return (_buffer.size() - _index) >= bytes;
         }
 
-        uint8_t *allocate(std::size_t bytes) override {
+        inline uint8_t *allocate(std::size_t bytes) override {
             if (available(bytes)) {
                 _index += bytes;
                 return (&_buffer[_index - bytes]);

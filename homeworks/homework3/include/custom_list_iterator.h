@@ -29,7 +29,7 @@ namespace homework3 {
                 if (_current) {
                     _current = _current->next;
                 } else {
-                    //FIXME: should throw!
+                    //????
                 }
                 return *this;
             }
@@ -41,7 +41,7 @@ namespace homework3 {
                 if (_current) {
                     _current = _current->next;
                 } else {
-                    //FIXME: should throw!
+                    //????
                 }
 
                 return tmp;

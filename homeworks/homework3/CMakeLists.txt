@@ -3,6 +3,11 @@ project(homework3)
 set(EXECUTABLE "allocator")
 #set(TEST_HOMEWORK3 "test_${EXECUTABLE}")
 
+find_package(Boost 1.58 REQUIRED COMPONENTS system)
+if(Boost_FOUND)
+    include_directories(${Boost_INCLUDE_DIRS})
+endif()
+
 include_directories(include)
 
 file (GLOB HEADERS_HOMEWORK3 "include/memory_resource.h"
@@ -17,7 +22,7 @@ file (GLOB SRC_HOMEWORK3 "")
 set(SRC_REQUIRED ${HEADERS_HOMEWORK3} ${SRC_HOMEWORK3})
 
 add_executable(${EXECUTABLE} "main.cpp" ${SRC_REQUIRED})
-target_link_libraries(${EXECUTABLE} ${LIB})
+target_link_libraries(${EXECUTABLE} ${LIB} Boost::system pthread rt)
 
 #add_executable(${TEST_HOMEWORK3} "test/test_homework3.cpp" ${SRC_REQUIRED})
 #target_link_libraries(${TEST_HOMEWORK3} gtest_main)

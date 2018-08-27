@@ -17,6 +17,7 @@
         if (*node == nullptr) {
             node_type* tmp =  std::allocator_traits<rebound_alloc_type>::allocate(_reboundAllocator, 1);
             tmp->val = val;
+            tmp->next = nullptr;
             *node = tmp;
         } else {
             _insert(&(*node)->next, val);
