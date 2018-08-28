@@ -15,6 +15,8 @@ matrix:
 #            #- valgrind
 
 before_install:
+  - sudo add-apt-repository -y ppa:kojoley/boost
+
   # C++14
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
@@ -22,19 +24,10 @@ before_install:
   - git submodule update --init --remote --recursive
   #  - sudo apt-get install -y libgtest-dev #valgrind
 
-  # Update apt lists (in order to install boost 1.58+)
-  - cat /etc/apt/sources.list
-  - cp /etc/apt/sources.list /tmp/sources.list
-  - echo 'deb http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse' >> /tmp/sources.list
-  - echo 'deb-src http://archive.ubuntu.com/ubuntu xenial main restricted universe multiverse' >> /tmp/sources.list
-  - sudo mv /tmp/sources.list /etc/apt/sources.list
 
-  # Install boost 1.58+
-  - sudo apt update
-  - sudo apt install -y libboost-all-dev
 
 install:
-  - sudo apt install -y libboost-all-dev  #1.58
+  - sudo apt-get -y install libboost-{chrono,program-options,date-time,thread,system,filesystem,regex,serialization}1.58{-dev,.0}
   # C++14
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
