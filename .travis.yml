@@ -15,14 +15,19 @@ matrix:
 #            #- valgrind
 
 before_install:
+  - sudo add-apt-repository -y ppa:kojoley/boost
+
   # C++14
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   - sudo apt-get update -qq
 
   - git submodule update --init --remote --recursive
-#  - sudo apt-get install -y libgtest-dev #valgrind
+  #  - sudo apt-get install -y libgtest-dev #valgrind
+
+
 
 install:
+  - sudo apt-get -y install libboost-{chrono,program-options,date-time,thread,system,filesystem,regex,serialization}1.58{-dev,.0}
   # C++14
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
