@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <vector>
 
 #include <boost/pool/pool_alloc.hpp>
 
@@ -41,6 +42,12 @@ void print(T& map) {
 }
 
 void exampleCustomAllocator();
+void exampleDefault();
+void exampleCopyCtor();
+void exampleMoveCtor();
+void exampleSwap();
+void exampleCopyAssignment();
+void exampleMoveAssignment();
 void exampleCustomList();
 void exampleFastPoolAllocator();
 void exampleShmAllocator();
@@ -48,39 +55,159 @@ void exampleShmAllocator();
 int main(int argc, char *argv[])
 {
     using StandardMap = std::map<Key, Val>;
-    StandardMap simpleMap{};
+    StandardMap simpleMap;
     fill<StandardMap>(simpleMap);
 
-    std::cout << "custom allocator example:" << "\n";
+    std::cout << "=== custom allocator examples: ===" << "\n";
     exampleCustomAllocator();
-    std::cout << "custom list example:" << "\n";
+    std::cout << "=== custom list example: ===" << "\n";
     exampleCustomList();
 
-    std::cout << "boost fast_pool_allocator example:" << "\n";
+    std::cout << "=== boost fast_pool_allocator example: ===" << "\n";
     exampleFastPoolAllocator();
 
-    std::cout << "boost interprocess allocator for unordered map example: " << "\n";
+    std::cout << "=== boost interprocess allocator for nested containers example: ===" << "\n";
     exampleShmAllocator();
 
     return 0;
 }
 
-void exampleCustomAllocator() {
-    using CustomMap = std::map<Key, Val, std::less<>, homework3::LinearAllocator<std::pair<const Key, Val>, maxCount> >;
+using CustomMap = std::map<Key, Val, std::less<>, homework3::LinearStatefulAllocator<std::pair<const Key, Val>, maxCount> >;
+
+void exampleCustomAllocator()
+{
+    exampleDefault();
+    exampleCopyCtor();
+    exampleMoveCtor();
+    exampleSwap();
+    exampleCopyAssignment();
+    exampleMoveAssignment();
+}
+
+void exampleDefault()
+{
+    std::cout << "==== Default allocator example ====" << "\n";
+
     CustomMap map{};
     fill<CustomMap>(map);
-    print<CustomMap>(map);
+    std::cout << "--- map: " ; print<CustomMap>(map);
+}
+
+void exampleCopyCtor()
+{
+    std::cout << "==== Container copy constructor example ====" << "\n";
+
+    std::cout << "--- constructing src --- " << "\n";
+    CustomMap src{};
+    fill<CustomMap>(src);
+    std::cout << "--- src: " ; print<CustomMap>(src);
+
+    std::cout << "--- copy constructing dest --- " << "\n";
+    auto dest = src;
+    std::cout << "--- changed a single element in src --- " << "\n";
+
+    src[0] = 100500;
+
+    std::cout << "--- src: " ; print<CustomMap>(src);
+    std::cout << "--- dest (copy): " ; print<CustomMap>(dest);
+}
+
+void exampleMoveCtor()
+{
+    std::cout << "==== Container move constructor example ====" << "\n";
+    std::cout << "--- constructing src --- " << "\n";
+    CustomMap src{};
+    fill<CustomMap>(src);
+
+    std::cout << "--- move constructing dest --- " << "\n";
+    auto dest = std::move(src);
+
+    std::cout << "--- src after move: "; print<CustomMap>(src);
+    std::cout << "--- dest after move: " ; print<CustomMap>(dest);
+
+    //works only with gcc>=5.5 - https://gcc.gnu.org/viewcvs/gcc?view=revision&revision=238647
+    //std::cout << "adding elements to src after move" << "\n";
+    //fill<CustomMap>(src);
+    //std::cout << "src is valid: "; print<CustomMap>(src);
+}
+
+void exampleSwap() {
+    std::cout << "==== Container swap example ====" << "\n";
+
+    std::cout << "--- constructing src1 --- " << "\n";
+    CustomMap src1;
+    fill<CustomMap>(src1);
+    src1[0] = 12345;
+
+    std::cout << "--- constructing src2 --- " << "\n";
+
+    CustomMap src2;
+    fill<CustomMap>(src2);
+
+    std::cout << "--- src1 before swap: " ; print<CustomMap>(src1);
+    std::cout << "--- src2 before swap : " ; print<CustomMap>(src2);
+
+    std::swap(src1, src2);
+
+    std::cout << "--- src1 after swap: " ; print<CustomMap>(src1);
+    std::cout << "--- src2 after swap: " ; print<CustomMap>(src2);
+}
+
+void exampleCopyAssignment()
+{
+    std::cout << "==== Container copy assignment example  ====" << "\n";
+
+    std::cout << "--- constructing src --- " << "\n";
+    CustomMap src;
+    fill<CustomMap>(src); src[0] = 6666;
+
+    std::cout << "--- constructing dest --- " << "\n";
+
+    CustomMap dest;
+    fill<CustomMap>(dest); dest[0] = 7777;
+
+    std::cout << "--- src before copy assignment: "; print<CustomMap>(src);
+    std::cout << "--- dest before copy assignment: "; print<CustomMap>(dest);
+
+    dest = src;
+
+    std::cout << "--- src after copy assignment: "; print<CustomMap>(src);
+    std::cout << "--- dest after copy assignment: "; print<CustomMap>(dest);
+}
+
+void exampleMoveAssignment() {
+    std::cout << "==== Container move assignment example  ====" << "\n";
+
+    std::cout << "--- constructing src --- " << "\n";
+    CustomMap src;
+    fill<CustomMap>(src); src[0] = 6666;
+
+    std::cout << "--- constructing dest --- " << "\n";
+    CustomMap dest;
+    dest[0] = 4321; //and log will contain only 8 additional allocations for dest
+    // fill<CustomMap>(dest); src[1] = 7777; //can be uncommented
+
+    std::cout << "--- src before move assignment: "; print<CustomMap>(src);
+    std::cout << "--- dest before move assignment: "; print<CustomMap>(dest);
+
+    dest = std::move(src);
+
+    std::cout << "--- src after move assignment: "; print<CustomMap>(src);
+    std::cout << "--- dest after move assignment: "; print<CustomMap>(dest);
+
+    //src[11] = 1234;
+    // src[12] = 3456; //will throw, need to uncomment _arena->deallocate in the allocator
+
 }
 
 void exampleCustomList() {
     homework3::CustomList<Val> list{0, 1, 2, 3, 4, 5, 6, 7, 8};
     list.insert(9);
 
-    homework3::CustomList<Val, homework3::LinearAllocator<Val, maxCount> > customList{0, 1, 2, 3, 100};
+    homework3::CustomList<Val, homework3::LinearStatefulAllocator<Val, maxCount> > customList{0, 1, 2, 3, 100};
     for (auto i = 5; i < maxCount; ++i) {
         customList.insert(i);
     }
-    //10th element will cause bad_alloc - the arena is too simple
 
     std::replace(customList.begin(), customList.end(), 100, 4);    //works!
 

@@ -28,9 +28,8 @@ namespace homework3 {
             CustomIterator& operator++() {
                 if (_current) {
                     _current = _current->next;
-                } else {
-                    //????
                 }
+
                 return *this;
             }
 
@@ -40,8 +39,6 @@ namespace homework3 {
 
                 if (_current) {
                     _current = _current->next;
-                } else {
-                    //????
                 }
 
                 return tmp;

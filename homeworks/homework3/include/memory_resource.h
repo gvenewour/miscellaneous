@@ -11,6 +11,6 @@ namespace homework3 {
         virtual bool available(std::size_t bytes) const = 0;
 
         virtual uint8_t* allocate(std::size_t bytes) = 0;
-        virtual void deallocate(std::size_t bytes) = 0;
+        virtual void deallocate(void* ptr, std::size_t bytes) = 0;
     };
 }

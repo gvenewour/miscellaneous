@@ -17,9 +17,10 @@ namespace homework3 {
             using node_type = impl::Node<T>;
             using iterator = impl::CustomIterator<T>;   //or we could define iterators as member classes
             using const_iterator = impl::CustomIterator<T>;
+            using traits = std::allocator_traits<A>;
             using rebound_alloc_type = typename std::allocator_traits<A>::template rebind_alloc<node_type> ;
 
-            CustomList() : /*_allocator{}, */_reboundAllocator(_allocator), _root{nullptr}, _last{nullptr}{};
+            CustomList() : _reboundAllocator(), _root{nullptr}, _last{nullptr}{};
             CustomList(std::initializer_list<T> list);
 
             CustomList(const CustomList&) = delete;
@@ -48,7 +49,7 @@ namespace homework3 {
 //          }
         private:
             void _insert(node_type** node, T val);
-            A _allocator;
+//            A _allocator;
             rebound_alloc_type _reboundAllocator;
             node_type *_root, *_last;
     };
