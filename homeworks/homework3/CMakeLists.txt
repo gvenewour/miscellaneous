@@ -11,14 +11,24 @@ endif()
 
 include_directories(include)
 
-file (GLOB HEADERS_HOMEWORK3 "include/memory_resource.h"
+file (GLOB HEADERS_HOMEWORK3 "include/common.h"
+                             "include/memory_resource.h"
                              "include/arena.h"
                              "include/linear_allocator.h"
                              "include/custom_list.h"
                              "include/custom_list.tpp"
                              "include/custom_list_node.h"
-                             "include/custom_list_iterator.h")
-file (GLOB SRC_HOMEWORK3 "")
+                             "include/custom_list_iterator.h"
+                             "include/example_boost_pool.h"
+                             "include/example_interprocess_allocators.h"
+                             "include/examples_custom_allocator.h"
+                             "include/example_custom_list.h"
+     )
+file (GLOB SRC_HOMEWORK3 "src/example_boost_pool.cpp"
+                         "src/example_custom_allocator.cpp"
+                         "src/example_interprocess_allocators.cpp"
+                         "src/example_custom_list.cpp"
+     )
 
 set(SRC_REQUIRED ${HEADERS_HOMEWORK3} ${SRC_HOMEWORK3})
 

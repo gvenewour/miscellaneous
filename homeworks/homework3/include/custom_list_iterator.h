@@ -5,7 +5,8 @@
 
 namespace homework3 {
     namespace impl {
-        template<typename T> /*, bool isConst = false>*/ //NOTE: can implement const_iterators without duplicating code
+        //NOTE: const_iterators can be implemented without duplicating code
+        template<typename T> /*, bool isConst = false>*/
         class CustomIterator {
         public:
             using value_type = T;
@@ -24,7 +25,6 @@ namespace homework3 {
                 return addressof(operator*());
             }
 
-            //pre-increment
             CustomIterator& operator++() {
                 if (_current) {
                     _current = _current->next;
@@ -33,7 +33,6 @@ namespace homework3 {
                 return *this;
             }
 
-            //post-increment
             CustomIterator operator++(int) {
                 CustomIterator tmp = *this;
 

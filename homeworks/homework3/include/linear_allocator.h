@@ -48,7 +48,6 @@ namespace homework3 {
             //if (_arena) { //comparison for gcc<5.5
             //    _arena->deallocate(p, n*sizeof(T));
             //}
-
         }
 
         template<typename U>
