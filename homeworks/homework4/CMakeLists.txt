@@ -5,10 +5,12 @@ set(EXECUTABLE "print_ip")
 
 include_directories(include)
 
-file (GLOB HEADERS_HOMEWORK4 )
+file (GLOB HEADERS_HOMEWORK4    "include/common.h"
+                                "include/base_cases.h"
+                                "include/tuple_cases.h")
 file (GLOB SRC_HOMEWORK4 )
 
-set(SRC_REQUIRED ${HEADERS_HOMEWORK4} ${SRC_HOMEWORK4})
+set(SRC_REQUIRED ${HEADERS_HOMEWORK4} ${SRC_HOMEWORK4} )
 
 add_executable(${EXECUTABLE} "main.cpp" ${SRC_REQUIRED})
 target_link_libraries(${EXECUTABLE} ${LIB})
