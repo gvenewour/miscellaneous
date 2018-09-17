@@ -1,7 +1,12 @@
+/** @file
+* @brief Class @ref homework2::IpPool
+*/
+
 #include <fstream>
 #include <functional>
 #include <tuple>
 #include "ip_pool.h"
+
 
 namespace homework2 {
     IpPool::IpPool(std::istream& stream) noexcept{

@@ -1,12 +1,16 @@
 #pragma once
 
-#include "common.h"
 #include <iostream>
 
 #include <string>
 #include <tuple>
 
+#include "common.h"
 #include "base_cases.h"
+
+/** \addtogroup homework4
+ *  @{
+ */
 
 namespace homework4 {
     namespace impl {
@@ -35,7 +39,6 @@ namespace homework4 {
         }
     }
 
-
     template<typename T, std::size_t N = std::tuple_size<T>::value>
     struct allowed_tuple_types: std::integral_constant<bool,
                                                       is_allowed_type<std::tuple_element_t<N-1, T>>::value &&
@@ -51,3 +54,5 @@ namespace homework4 {
         impl::print(address);
     }
 }
+
+/** @}*/

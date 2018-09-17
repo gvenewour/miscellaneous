@@ -1,6 +1,10 @@
 #include <algorithm>
 #include <iostream>
 
+/** @file
+* @brief Class @ref homework2::IpAddress
+*/
+
 #include "ip_address.h"
 
 namespace homework2 {

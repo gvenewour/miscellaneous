@@ -1,5 +1,9 @@
 #pragma once
 
+/** @file
+* @brief Class homework3::CustomList
+*/
+
 #include <initializer_list>
 #include <iterator>
 #include <memory>
@@ -10,6 +14,12 @@
 
 namespace homework3 {
 
+    /**
+     * @brief Кастомная реализация нодового контейнера, реализующего список.
+     * Поддерживает работу с @ref homework3::LinearStatefulAllocator
+     * @tparam T тип элемента контейнера
+     * @tparam A тип аллокатора
+     */
     template<typename T, typename A = std::allocator<T> >
     class CustomList {
         public:
@@ -56,4 +66,3 @@ namespace homework3 {
 
     #include "custom_list.tpp"
 }
-

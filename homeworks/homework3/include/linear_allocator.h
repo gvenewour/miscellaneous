@@ -1,5 +1,9 @@
 #pragma once
 
+/** @file
+* @brief Class homework3::LinearStatefulAllocator
+*/
+
 #include <memory>
 #include "arena.h"
 
@@ -7,6 +11,9 @@
 
 namespace homework3 {
 
+    /**
+    * @brief Кастомный аллокатор для нодовых контейнеров
+    */
     template<typename T, std::size_t maxCount>
     class LinearStatefulAllocator {
     public:

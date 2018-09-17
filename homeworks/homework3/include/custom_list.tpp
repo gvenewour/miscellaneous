@@ -1,5 +1,9 @@
 #include "custom_list.h"
 
+/** @file
+* @brief Class homework3::CustomList
+*/
+
 template<typename T, typename A>
 CustomList<T,A>::CustomList(std::initializer_list<T> list) : CustomList(){
     for (auto val: list) {
@@ -28,6 +32,3 @@ void CustomList<T, A>::_insert(node_type **node, T val) {
         _insert(&(*node)->next, val);
     }
 }
-
-
-

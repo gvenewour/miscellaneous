@@ -1,5 +1,9 @@
 #pragma once
 
+/** @file
+* @brief Примеры работы std::map с кастомным аллокатором @ref homework3::LinearStateAllocator
+*/
+
 namespace homework3 {
     void examplesCustomAllocator();
 
@@ -10,4 +14,3 @@ namespace homework3 {
     void exampleCopyAssignment();
     void exampleMoveAssignment();
 }
-

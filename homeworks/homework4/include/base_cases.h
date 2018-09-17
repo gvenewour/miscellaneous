@@ -9,6 +9,9 @@
 
 #include "common.h"
 
+/** \addtogroup homework4
+ *  @{
+ */
 
 namespace homework4 {
 
@@ -61,4 +64,4 @@ namespace homework4 {
     }
 }
 
-
+/** @}*/

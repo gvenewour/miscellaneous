@@ -1,5 +1,9 @@
 #include <iostream>
 
+/** @file
+* @brief Решение ДЗ-04
+*/
+
 #include "base_cases.h"
 #include "tuple_cases.h"
 

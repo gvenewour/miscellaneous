@@ -1,3 +1,7 @@
+/** @file
+* @brief Примеры работы std::map с кастомным аллокатором @ref homework3::LinearStateAllocator
+*/
+
 #include <map>
 
 #include "common.h"
