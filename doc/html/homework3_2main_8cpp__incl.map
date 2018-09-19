@@ -1,0 +1,6 @@
+<map id="/home/travis/build/gvenewour/miscellaneous/homeworks/homework3/main.cpp" name="/home/travis/build/gvenewour/miscellaneous/homeworks/homework3/main.cpp">
+<area shape="rect" id="node5" href="$examples__custom__allocator_8h.html" title="Примеры работы std::map с homework3::LinearStatefulAllocator. " alt="" coords="280,117,475,144"/>
+<area shape="rect" id="node6" href="$example__custom__list_8h.html" title="Function homework3::exampleCustomList. " alt="" coords="499,117,655,144"/>
+<area shape="rect" id="node7" href="$example__boost__pool_8h.html" title="Function homework3::exampleFastPoolAllocator. " alt="" coords="680,117,832,144"/>
+<area shape="rect" id="node9" href="$example__interprocess__allocators_8h.html" title="Function homework3::exampleShmAllocator. " alt="" coords="856,110,1004,151"/>
+</map>

@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Homeworks: Пространство имен homework3::shm</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Homeworks
+   </div>
+   <div id="projectbrief">Otus C++ home tasks</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li class="current"><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="namespacemembers.html"><span>Члены&#160;пространств&#160;имен</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacehomework3.html">homework3</a></li><li class="navelem"><a class="el" href="namespacehomework3_1_1shm.html">shm</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Определения типов</a>  </div>
+  <div class="headertitle">
+<div class="title">Пространство имен homework3::shm</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Внутренние детали работы с аллокаторами boost::interprocess.  
+</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Определения типов</h2></td></tr>
+<tr class="memitem:ace818dd7fd4c32d4e8223e1eee3dc408"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#ace818dd7fd4c32d4e8223e1eee3dc408">Segment</a> = boost::interprocess::managed_shared_memory</td></tr>
+<tr class="separator:ace818dd7fd4c32d4e8223e1eee3dc408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72f96960eb6d30473e9310a5e3570fa2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">SegmentManager</a> = Segment::segment_manager</td></tr>
+<tr class="separator:a72f96960eb6d30473e9310a5e3570fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6990ac0bdc5b2b4894e8117677d1ca1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#ae6990ac0bdc5b2b4894e8117677d1ca1">VoidAllocator</a> = boost::interprocess::allocator&lt; void, <a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">SegmentManager</a> &gt;</td></tr>
+<tr class="separator:ae6990ac0bdc5b2b4894e8117677d1ca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6494546ce1814bb3228a565b75a21023"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#a6494546ce1814bb3228a565b75a21023">ValAllocator</a> = boost::interprocess::allocator&lt; <a class="el" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2">Val</a>, <a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">SegmentManager</a> &gt;</td></tr>
+<tr class="separator:a6494546ce1814bb3228a565b75a21023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1889e0a98467bc8af33d590091ae6cce"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#a1889e0a98467bc8af33d590091ae6cce">ValSet</a> = boost::interprocess::set&lt; <a class="el" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2">Val</a>, std::less&lt;&gt;, <a class="el" href="namespacehomework3_1_1shm.html#a6494546ce1814bb3228a565b75a21023">ValAllocator</a> &gt;</td></tr>
+<tr class="separator:a1889e0a98467bc8af33d590091ae6cce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5441ef25faa89b664a35c3649064d5c0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#a5441ef25faa89b664a35c3649064d5c0">Pair</a> = std::pair&lt; const <a class="el" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">Key</a>, <a class="el" href="namespacehomework3_1_1shm.html#a1889e0a98467bc8af33d590091ae6cce">ValSet</a> &gt;</td></tr>
+<tr class="separator:a5441ef25faa89b664a35c3649064d5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d3982f888fc4fd69a0728014c2e12a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#a5d3982f888fc4fd69a0728014c2e12a7">PairAllocator</a> = boost::interprocess::allocator&lt; <a class="el" href="namespacehomework3_1_1shm.html#a5441ef25faa89b664a35c3649064d5c0">Pair</a>, <a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">SegmentManager</a> &gt;</td></tr>
+<tr class="separator:a5d3982f888fc4fd69a0728014c2e12a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338bd8231d2e146c8f5152fc61ba9f20"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3_1_1shm.html#a338bd8231d2e146c8f5152fc61ba9f20">Map</a> = boost::unordered_map&lt; <a class="el" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">Key</a>, <a class="el" href="namespacehomework3_1_1shm.html#a1889e0a98467bc8af33d590091ae6cce">shm::ValSet</a>, boost::hash&lt; <a class="el" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">Key</a> &gt;, std::equal_to&lt;&gt;, <a class="el" href="namespacehomework3_1_1shm.html#a5d3982f888fc4fd69a0728014c2e12a7">shm::PairAllocator</a> &gt;</td></tr>
+<tr class="separator:a338bd8231d2e146c8f5152fc61ba9f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Типы</h2>
+<a class="anchor" id="a338bd8231d2e146c8f5152fc61ba9f20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#a338bd8231d2e146c8f5152fc61ba9f20">homework3::shm::Map</a> = typedef boost::unordered_map&lt;<a class="el" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">Key</a>, <a class="el" href="namespacehomework3_1_1shm.html#a1889e0a98467bc8af33d590091ae6cce">shm::ValSet</a>, boost::hash&lt;<a class="el" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">Key</a>&gt;, std::equal_to&lt;&gt;, <a class="el" href="namespacehomework3_1_1shm.html#a5d3982f888fc4fd69a0728014c2e12a7">shm::PairAllocator</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5441ef25faa89b664a35c3649064d5c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#a5441ef25faa89b664a35c3649064d5c0">homework3::shm::Pair</a> = typedef std::pair&lt;const <a class="el" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">Key</a>, <a class="el" href="namespacehomework3_1_1shm.html#a1889e0a98467bc8af33d590091ae6cce">ValSet</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a5d3982f888fc4fd69a0728014c2e12a7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#a5d3982f888fc4fd69a0728014c2e12a7">homework3::shm::PairAllocator</a> = typedef boost::interprocess::allocator&lt;<a class="el" href="namespacehomework3_1_1shm.html#a5441ef25faa89b664a35c3649064d5c0">Pair</a>, <a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">SegmentManager</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ace818dd7fd4c32d4e8223e1eee3dc408"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#ace818dd7fd4c32d4e8223e1eee3dc408">homework3::shm::Segment</a> = typedef boost::interprocess::managed_shared_memory</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a72f96960eb6d30473e9310a5e3570fa2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">homework3::shm::SegmentManager</a> = typedef Segment::segment_manager</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6494546ce1814bb3228a565b75a21023"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#a6494546ce1814bb3228a565b75a21023">homework3::shm::ValAllocator</a> = typedef boost::interprocess::allocator&lt;<a class="el" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2">Val</a>, <a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">SegmentManager</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a1889e0a98467bc8af33d590091ae6cce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#a1889e0a98467bc8af33d590091ae6cce">homework3::shm::ValSet</a> = typedef boost::interprocess::set&lt;<a class="el" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2">Val</a>, std::less&lt;&gt;, <a class="el" href="namespacehomework3_1_1shm.html#a6494546ce1814bb3228a565b75a21023">ValAllocator</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ae6990ac0bdc5b2b4894e8117677d1ca1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacehomework3_1_1shm.html#ae6990ac0bdc5b2b4894e8117677d1ca1">homework3::shm::VoidAllocator</a> = typedef boost::interprocess::allocator&lt;void, <a class="el" href="namespacehomework3_1_1shm.html#a72f96960eb6d30473e9310a5e3570fa2">SegmentManager</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="example__interprocess__allocators_8cpp_source.html">example_interprocess_allocators.cpp</a> строка <a class="el" href="example__interprocess__allocators_8cpp_source.html#l00021">21</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Homeworks. Последние изменения: Ср 19 Сен 2018 12:44:00. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

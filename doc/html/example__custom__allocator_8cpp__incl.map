@@ -1,0 +1,6 @@
+<map id="/home/travis/build/gvenewour/miscellaneous/homeworks/homework3/src/example_custom_allocator.cpp" name="/home/travis/build/gvenewour/miscellaneous/homeworks/homework3/src/example_custom_allocator.cpp">
+<area shape="rect" id="node4" href="$examples__custom__allocator_8h.html" title="Примеры работы std::map с homework3::LinearStatefulAllocator. " alt="" coords="183,125,377,152"/>
+<area shape="rect" id="node5" href="$linear__allocator_8h.html" title="Class homework3::LinearStatefulAllocator. " alt="" coords="401,125,521,152"/>
+<area shape="rect" id="node7" href="$arena_8h.html" title="Class homework3::SimpleFixedArena. " alt="" coords="429,200,493,227"/>
+<area shape="rect" id="node9" href="$memory__resource_8h.html" title="Class homework3::MemoryResource. " alt="" coords="378,275,515,301"/>
+</map>

@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Homeworks: Шаблон класса homework3::impl::CustomIterator&lt; T &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Homeworks
+   </div>
+   <div id="projectbrief">Otus C++ home tasks</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li><a href="inherits.html"><span>Иерархия&#160;классов</span></a></li>
+      <li><a href="functions.html"><span>Члены&#160;классов</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacehomework3.html">homework3</a></li><li class="navelem"><a class="el" href="namespacehomework3_1_1impl.html">impl</a></li><li class="navelem"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Открытые типы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classhomework3_1_1impl_1_1_custom_iterator-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса homework3::impl::CustomIterator&lt; T &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Class <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html" title="Class homework3::impl::CustomIterator. ">homework3::impl::CustomIterator</a>.  
+ <a href="classhomework3_1_1impl_1_1_custom_iterator.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="custom__list__iterator_8h_source.html">/home/travis/build/gvenewour/miscellaneous/homeworks/homework3/include/custom_list_iterator.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Открытые типы</h2></td></tr>
+<tr class="memitem:aa9d4cbf0a8b57ee2b9fbf50613695b28"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#aa9d4cbf0a8b57ee2b9fbf50613695b28">value_type</a> = T</td></tr>
+<tr class="separator:aa9d4cbf0a8b57ee2b9fbf50613695b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a822f8df1f365d232798ee4da0fcb8495"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a822f8df1f365d232798ee4da0fcb8495">reference</a> = T &amp;</td></tr>
+<tr class="separator:a822f8df1f365d232798ee4da0fcb8495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8add4d311cb985fef9b4d3a24dfc7e0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#ac8add4d311cb985fef9b4d3a24dfc7e0">pointer</a> = T *</td></tr>
+<tr class="separator:ac8add4d311cb985fef9b4d3a24dfc7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6423f6e43b4c315be780fa0e5900bf91"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a6423f6e43b4c315be780fa0e5900bf91">iterator_category</a> = std::forward_iterator_tag</td></tr>
+<tr class="separator:a6423f6e43b4c315be780fa0e5900bf91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79bd72d2d798b486aa89ba5cc028abc8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a79bd72d2d798b486aa89ba5cc028abc8">difference_type</a> = std::ptrdiff_t</td></tr>
+<tr class="separator:a79bd72d2d798b486aa89ba5cc028abc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a606646ef889fb856303c6f89d287129c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a606646ef889fb856303c6f89d287129c">CustomIterator</a> ()</td></tr>
+<tr class="separator:a606646ef889fb856303c6f89d287129c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c0ba26bbdcdf3a4f8ff5520f3407dd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a32c0ba26bbdcdf3a4f8ff5520f3407dd">CustomIterator</a> (<a class="el" href="namespacehomework3_1_1impl.html#structhomework3_1_1impl_1_1_node">Node</a>&lt; T &gt; *node)</td></tr>
+<tr class="separator:a32c0ba26bbdcdf3a4f8ff5520f3407dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace039dc0be238514257c8c7dd9fd8b2d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a822f8df1f365d232798ee4da0fcb8495">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#ace039dc0be238514257c8c7dd9fd8b2d">operator*</a> () const </td></tr>
+<tr class="separator:ace039dc0be238514257c8c7dd9fd8b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cd05146b95c31a7088e98426c45756"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#ac8add4d311cb985fef9b4d3a24dfc7e0">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#af3cd05146b95c31a7088e98426c45756">operator-&gt;</a> () const </td></tr>
+<tr class="separator:af3cd05146b95c31a7088e98426c45756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbb4b5bdfbebf0fe632bdf64553ac108"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#acbb4b5bdfbebf0fe632bdf64553ac108">operator++</a> ()</td></tr>
+<tr class="separator:acbb4b5bdfbebf0fe632bdf64553ac108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba1e34127b0bcdfb5ccf0c41810f980"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a8ba1e34127b0bcdfb5ccf0c41810f980">operator++</a> (int)</td></tr>
+<tr class="separator:a8ba1e34127b0bcdfb5ccf0c41810f980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf125e991d325d27b9e92600e1c70697"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#acf125e991d325d27b9e92600e1c70697">operator==</a> (const <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a> &amp;rhs)</td></tr>
+<tr class="separator:acf125e991d325d27b9e92600e1c70697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479125c687b6f55769a89e851d34bd4f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a479125c687b6f55769a89e851d34bd4f">operator!=</a> (const <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a> &amp;rhs)</td></tr>
+<tr class="separator:a479125c687b6f55769a89e851d34bd4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br/>
+class homework3::impl::CustomIterator&lt; T &gt;</h3>
+
+<dl class="section note"><dt>Заметки</dt><dd>Можно запилить константность итераторов без дублирования кода </dd></dl>
+<dl class="section see"><dt>См. также</dt><dd><a class="el" href="namespacehomework3_1_1impl.html#structhomework3_1_1impl_1_1_node">homework3::impl::Node</a>, <a class="el" href="classhomework3_1_1_custom_list.html" title="Кастомная реализация однонаправленного списка. Поддерживает работу с homework3::LinearStatefulAllocat...">homework3::CustomList</a> </dd></dl>
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00020">20</a></p>
+</div><h2 class="groupheader">Определения типов</h2>
+<a class="anchor" id="a79bd72d2d798b486aa89ba5cc028abc8"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::<a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a79bd72d2d798b486aa89ba5cc028abc8">difference_type</a> =  std::ptrdiff_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a6423f6e43b4c315be780fa0e5900bf91"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::<a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a6423f6e43b4c315be780fa0e5900bf91">iterator_category</a> =  std::forward_iterator_tag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ac8add4d311cb985fef9b4d3a24dfc7e0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::<a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#ac8add4d311cb985fef9b4d3a24dfc7e0">pointer</a> =  T*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a822f8df1f365d232798ee4da0fcb8495"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::<a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a822f8df1f365d232798ee4da0fcb8495">reference</a> =  T&amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a class="anchor" id="aa9d4cbf0a8b57ee2b9fbf50613695b28"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::<a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#aa9d4cbf0a8b57ee2b9fbf50613695b28">value_type</a> =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a class="anchor" id="a606646ef889fb856303c6f89d287129c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::<a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a32c0ba26bbdcdf3a4f8ff5520f3407dd"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::<a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacehomework3_1_1impl.html#structhomework3_1_1impl_1_1_node">Node</a>&lt; T &gt; *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00030">30</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a class="anchor" id="a479125c687b6f55769a89e851d34bd4f"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00057">57</a></p>
+
+</div>
+</div>
+<a class="anchor" id="ace039dc0be238514257c8c7dd9fd8b2d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#a822f8df1f365d232798ee4da0fcb8495">reference</a> <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00032">32</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acbb4b5bdfbebf0fe632bdf64553ac108"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a>&amp; <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00038">38</a></p>
+
+</div>
+</div>
+<a class="anchor" id="a8ba1e34127b0bcdfb5ccf0c41810f980"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a> <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a class="anchor" id="af3cd05146b95c31a7088e98426c45756"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html#ac8add4d311cb985fef9b4d3a24dfc7e0">pointer</a> <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00034">34</a></p>
+
+</div>
+</div>
+<a class="anchor" id="acf125e991d325d27b9e92600e1c70697"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">homework3::impl::CustomIterator</a>&lt; T &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classhomework3_1_1impl_1_1_custom_iterator.html">CustomIterator</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rhs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a> строка <a class="el" href="custom__list__iterator_8h_source.html#l00056">56</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>/home/travis/build/gvenewour/miscellaneous/homeworks/homework3/include/<a class="el" href="custom__list__iterator_8h_source.html">custom_list_iterator.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Homeworks. Последние изменения: Ср 19 Сен 2018 12:44:00. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,57 @@
+Start testing: Sep 19 12:43 UTC
+----------------------------------------------------------
+1/2 Testing: version_validation
+1/2 Test: version_validation
+Command: "/home/travis/build/gvenewour/miscellaneous/build/results/test_lib"
+Directory: /home/travis/build/gvenewour/miscellaneous/build/results
+"version_validation" start time: Sep 19 12:43 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/travis/build/gvenewour/miscellaneous/gtest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test case.
+[----------] Global test environment set-up.
+[----------] 1 test from Version
+[ RUN      ] Version.AboveZero
+[       OK ] Version.AboveZero (0 ms)
+[----------] 1 test from Version (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test case ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"version_validation" end time: Sep 19 12:43 UTC
+"version_validation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: homework2_tests
+2/2 Test: homework2_tests
+Command: "/home/travis/build/gvenewour/miscellaneous/build/results/test_ip_filter"
+Directory: /home/travis/build/gvenewour/miscellaneous/build/results
+"homework2_tests" start time: Sep 19 12:43 UTC
+Output:
+----------------------------------------------------------
+Running main() from /home/travis/build/gvenewour/miscellaneous/gtest/googletest/src/gtest_main.cc
+[==========] Running 2 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 2 tests from Homework2
+[ RUN      ] Homework2.DefaultPool
+[       OK ] Homework2.DefaultPool (0 ms)
+[ RUN      ] Homework2.ValidPoolFromFile
+[       OK ] Homework2.ValidPoolFromFile (1 ms)
+[----------] 2 tests from Homework2 (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test case ran. (1 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"homework2_tests" end time: Sep 19 12:43 UTC
+"homework2_tests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 19 12:43 UTC

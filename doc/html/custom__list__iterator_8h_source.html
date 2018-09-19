@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Homeworks: Исходный файл /home/travis/build/gvenewour/miscellaneous/homeworks/homework3/include/custom_list_iterator.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Homeworks
+   </div>
+   <div id="projectbrief">Otus C++ home tasks</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_06296ad887369d0fe6ed319688dcbec9.html">travis</a></li><li class="navelem"><a class="el" href="dir_9da5c968de586c136c62b60970cbb10e.html">build</a></li><li class="navelem"><a class="el" href="dir_d147c2faca062f2abe25be971b78ccfb.html">gvenewour</a></li><li class="navelem"><a class="el" href="dir_87ec839e448f1c7e58946065d118c827.html">miscellaneous</a></li><li class="navelem"><a class="el" href="dir_07002b87f0bdb9bf06f10b0cb831da54.html">homeworks</a></li><li class="navelem"><a class="el" href="dir_52834a6bf5bf30146ddc193edac7400c.html">homework3</a></li><li class="navelem"><a class="el" href="dir_161b029956a83d3766b6f102b6e6d065.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">custom_list_iterator.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="custom__list__iterator_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="custom__list__node_8h.html" title="Struct homework3::impl::Node. ">custom_list_node.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>homework3 {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">namespace </span>impl {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="comment">//NOTE: const_iterators can be implemented without duplicating code</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="comment">/*, bool isConst = false&gt;*/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html">   20</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html" title="Class homework3::impl::CustomIterator. ">CustomIterator</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#aa9d4cbf0a8b57ee2b9fbf50613695b28">   22</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#aa9d4cbf0a8b57ee2b9fbf50613695b28">value_type</a> = T;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#a822f8df1f365d232798ee4da0fcb8495">   23</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a822f8df1f365d232798ee4da0fcb8495">reference</a>  = T&amp;;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#ac8add4d311cb985fef9b4d3a24dfc7e0">   24</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#ac8add4d311cb985fef9b4d3a24dfc7e0">pointer</a>    = T*;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#a6423f6e43b4c315be780fa0e5900bf91">   25</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a6423f6e43b4c315be780fa0e5900bf91">iterator_category</a> = std::forward_iterator_tag;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#a79bd72d2d798b486aa89ba5cc028abc8">   26</a></span>&#160;            <span class="keyword">using</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a79bd72d2d798b486aa89ba5cc028abc8">difference_type</a> = std::ptrdiff_t;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#a606646ef889fb856303c6f89d287129c">   28</a></span>&#160;            <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a606646ef889fb856303c6f89d287129c">CustomIterator</a>(): _current{<span class="keyword">nullptr</span>}{};</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#a32c0ba26bbdcdf3a4f8ff5520f3407dd">   30</a></span>&#160;            <span class="keyword">explicit</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a32c0ba26bbdcdf3a4f8ff5520f3407dd">CustomIterator</a>(<a class="code" href="namespacehomework3_1_1impl.html#structhomework3_1_1impl_1_1_node" title="Нода для кастомного списка homework3::CustomList. ">Node&lt;T&gt;</a> *node) : _current{node} {};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#ace039dc0be238514257c8c7dd9fd8b2d">   32</a></span>&#160;            <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a822f8df1f365d232798ee4da0fcb8495">reference</a> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#ace039dc0be238514257c8c7dd9fd8b2d">operator*</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _current-&gt;val; };</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#af3cd05146b95c31a7088e98426c45756">   34</a></span>&#160;            <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#ac8add4d311cb985fef9b4d3a24dfc7e0">pointer</a> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#af3cd05146b95c31a7088e98426c45756">operator-&gt;</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">return</span> addressof(<span class="keyword">operator</span>*());</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#acbb4b5bdfbebf0fe632bdf64553ac108">   38</a></span>&#160;            <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html" title="Class homework3::impl::CustomIterator. ">CustomIterator</a>&amp; <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#acbb4b5bdfbebf0fe632bdf64553ac108">operator++</a>() {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordflow">if</span> (_current) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    _current = _current-&gt;next;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#a8ba1e34127b0bcdfb5ccf0c41810f980">   46</a></span>&#160;            <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html" title="Class homework3::impl::CustomIterator. ">CustomIterator</a> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a8ba1e34127b0bcdfb5ccf0c41810f980">operator++</a>(<span class="keywordtype">int</span>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html" title="Class homework3::impl::CustomIterator. ">CustomIterator</a> tmp = *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span> (_current) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    _current = _current-&gt;next;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">return</span> tmp;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#acf125e991d325d27b9e92600e1c70697">   56</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#acf125e991d325d27b9e92600e1c70697">operator==</a>(<span class="keyword">const</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html" title="Class homework3::impl::CustomIterator. ">CustomIterator</a> &amp;rhs) { <span class="keywordflow">return</span> _current == rhs._current; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classhomework3_1_1impl_1_1_custom_iterator.html#a479125c687b6f55769a89e851d34bd4f">   57</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html#a479125c687b6f55769a89e851d34bd4f">operator!=</a>(<span class="keyword">const</span> <a class="code" href="classhomework3_1_1impl_1_1_custom_iterator.html" title="Class homework3::impl::CustomIterator. ">CustomIterator</a> &amp;rhs) { <span class="keywordflow">return</span> _current != rhs._current; }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="namespacehomework3_1_1impl.html#structhomework3_1_1impl_1_1_node" title="Нода для кастомного списка homework3::CustomList. ">Node&lt;T&gt;</a> *_current;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        };</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Homeworks. Последние изменения: Ср 19 Сен 2018 12:44:00. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Homeworks: Исходный файл /home/travis/build/gvenewour/miscellaneous/homeworks/homework2/include/ip_pool.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Homeworks
+   </div>
+   <div id="projectbrief">Otus C++ home tasks</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_06296ad887369d0fe6ed319688dcbec9.html">travis</a></li><li class="navelem"><a class="el" href="dir_9da5c968de586c136c62b60970cbb10e.html">build</a></li><li class="navelem"><a class="el" href="dir_d147c2faca062f2abe25be971b78ccfb.html">gvenewour</a></li><li class="navelem"><a class="el" href="dir_87ec839e448f1c7e58946065d118c827.html">miscellaneous</a></li><li class="navelem"><a class="el" href="dir_07002b87f0bdb9bf06f10b0cb831da54.html">homeworks</a></li><li class="navelem"><a class="el" href="dir_919dff8e909c25d74ddc0961fed7c90d.html">homework2</a></li><li class="navelem"><a class="el" href="dir_afda4ee7c04bfd1b3a4fc0c858b30df7.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ip_pool.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="ip__pool_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;experimental/filesystem&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ip__address_8h.html" title="Class homework2::IpAddress. ">ip_address.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>fs = std::experimental::filesystem;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>homework2 {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classhomework2_1_1_ip_pool.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classhomework2_1_1_ip_pool.html" title="Класс, представляющий пул адресов ">IpPool</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classhomework2_1_1_ip_pool.html#afcf380934cc1a275b5412385cf5d4ad0" title="Конструктор по умолчанию; создает пустой пул ">IpPool</a>() noexcept = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classhomework2_1_1_ip_pool.html#afcf380934cc1a275b5412385cf5d4ad0" title="Конструктор по умолчанию; создает пустой пул ">IpPool</a>(std::istream&amp; stream) noexcept;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classhomework2_1_1_ip_pool.html#afcf380934cc1a275b5412385cf5d4ad0" title="Конструктор по умолчанию; создает пустой пул ">IpPool</a>(<span class="keyword">const</span> fs::path&amp; path);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhomework2_1_1_ip_pool.html#a4487ef159926b212dbc923f0690a7fb9" title="Обратная сортировка по октетам ">sortReverse</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classhomework2_1_1_ip_pool.html#a7fc97111c54139a34cd166be01c9cd49">   49</a></span>&#160;        std::size_t <a class="code" href="classhomework2_1_1_ip_pool.html#a7fc97111c54139a34cd166be01c9cd49" title="Возвращает размер пула адресов ">size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _pool.size();}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhomework2_1_1_ip_pool.html#af3e758febfb8616fe3607a1ce9aa8e9f" title="Вывод всех адресов из пула ">print</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhomework2_1_1_ip_pool.html#a74f9d0dac690c862ea4bfc6f945863a8" title="Вывод адресов из пула по значению первого октета ">printBy</a>(<span class="keyword">const</span> <a class="code" href="namespacehomework2.html#a6f58c44d745356adbb2264e0fdef4796" title="Тип октета в адресе ">Octet</a>&amp; first) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhomework2_1_1_ip_pool.html#a74f9d0dac690c862ea4bfc6f945863a8" title="Вывод адресов из пула по значению первого октета ">printBy</a>(<span class="keyword">const</span> <a class="code" href="namespacehomework2.html#a6f58c44d745356adbb2264e0fdef4796" title="Тип октета в адресе ">Octet</a>&amp; first, <span class="keyword">const</span> <a class="code" href="namespacehomework2.html#a6f58c44d745356adbb2264e0fdef4796" title="Тип октета в адресе ">Octet</a>&amp; second) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhomework2_1_1_ip_pool.html#afe939a64873d93798d892625fbdfae5e" title="Вывод адресов из пула по значению любого из октетов ">printByAny</a>(<span class="keyword">const</span> <a class="code" href="namespacehomework2.html#a6f58c44d745356adbb2264e0fdef4796" title="Тип октета в адресе ">Octet</a>&amp; octet) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">using</span> IpPool_t = std::vector&lt;IpAddress&gt;;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">void</span> _readPool(std::istream&amp; stream);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        IpPool_t _pool;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    };</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Homeworks. Последние изменения: Ср 19 Сен 2018 12:44:00. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

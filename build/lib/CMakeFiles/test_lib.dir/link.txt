@@ -1,0 +1,1 @@
+/usr/bin/g++  -O3 -DNDEBUG   CMakeFiles/test_lib.dir/test/test_main.cpp.o  -o ../results/test_lib ../gtest/googlemock/gtest/libgtest_main.a ../results/libhomeworks.a ../gtest/googlemock/gtest/libgtest.a -pthread 

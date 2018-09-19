@@ -1,0 +1,1 @@
+/usr/bin/g++  -O3 -DNDEBUG   CMakeFiles/test_ip_filter.dir/test/test_homework2.cpp.o CMakeFiles/test_ip_filter.dir/src/ip_address.cpp.o CMakeFiles/test_ip_filter.dir/src/ip_pool.cpp.o  -o ../../results/test_ip_filter ../../gtest/googlemock/gtest/libgtest_main.a /usr/lib/gcc/x86_64-linux-gnu/5/libstdc++fs.a ../../gtest/googlemock/gtest/libgtest.a -pthread 

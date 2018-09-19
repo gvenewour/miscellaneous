@@ -1,0 +1,9 @@
+Package: homeworks
+Version: 0.0.26
+Section: devel
+Priority: optional
+Architecture: amd64
+Installed-Size: 3057
+Maintainer: alla@host.somedomain
+Description: Otus C++ course homeworks
+
