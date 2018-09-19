@@ -26,6 +26,14 @@
 * @brief ДЗ-3 (allocator). Задание на реализацию кастомного аллокатора и контейнеров
 */
 
+/** @namespace homework3::impl
+* @brief Внутренние детали реализации контейнера @ref homework3::CustomList
+*/
+
+/** @namespace homework3::shm
+* @brief Внутренние детали работы с аллокаторами boost::interprocess
+*/
+
 /** @dir homework4
  * @brief Namespace @ref homework4
  */
@@ -33,8 +41,12 @@
  * @brief Namespace @ref homework4
  */
 
-/** @namespace homework4 print_ip
+/** @namespace homework4
 * @brief ДЗ-4 (print_ip). Задание на перегрузку функций вывода ip адреса
+*/
+
+/** @namespace homework4::impl
+* @brief Внутренние детали реализации печати адресов
 */
 
 

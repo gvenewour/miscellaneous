@@ -8,11 +8,14 @@ matrix:
       compiler: gcc
 #      env:
 #        - COMPILER=g++-5
-#      addons:
-#        apt:
-#          packages:
+      addons:
+        apt:
+          packages:
+             - doxygen
+             - doxygen-latex
+             - graphviz
 #            - g++-5
-#            #- valgrind
+#            - valgrind
 
 before_install:
   - sudo add-apt-repository -y ppa:kojoley/boost
@@ -24,20 +27,32 @@ before_install:
   - git submodule update --init --remote --recursive
   #  - sudo apt-get install -y libgtest-dev #valgrind
 
-
-
 install:
   - sudo apt-get -y install libboost-{chrono,program-options,date-time,thread,system,filesystem,regex,serialization}1.58{-dev,.0}
   # C++14
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 
-script: "./scripts/build.sh"
+script:
+  - "./scripts/build.sh"
+
+after_success:
+  - cd $TRAVIS_BUILD_DIR/doc
+  - doxygen Doxyfile
+
 #branches:
 #  only:
 #  - master
+
 deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-  - curl -T $TRAVIS_BUILD_DIR/build/homeworks_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb -ugvenewour:$BINTRAY_API_KEY "https://api.bintray.com/content/gvenewour/miscellaneous/homeworks/$TRAVIS_BUILD_NUMBER/homeworks_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - provider: pages
+    github-token: $GITHUB_TOKEN
+    committer-from-gh: true
+    keep-history: true
+    skip_cleanup: true
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script:
+    - curl -T $TRAVIS_BUILD_DIR/build/homeworks_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb -ugvenewour:$BINTRAY_API_KEY "https://api.bintray.com/content/gvenewour/miscellaneous/homeworks/$TRAVIS_BUILD_NUMBER/homeworks_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
