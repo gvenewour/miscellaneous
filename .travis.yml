@@ -37,7 +37,7 @@ script:
   - "./scripts/build.sh"
 
 after_success:
-  - cd $TRAVIS_BUILD_DIR/doc
+  - cd doc
   - doxygen Doxyfile
 
 #branches:
@@ -50,6 +50,7 @@ deploy:
     committer-from-gh: true
     keep-history: true
     skip_cleanup: true
+    local-dir: doc/html
     on:
       branch: master
   - provider: script
