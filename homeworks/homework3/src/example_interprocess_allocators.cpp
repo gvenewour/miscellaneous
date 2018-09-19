@@ -1,3 +1,7 @@
+/** @file
+* @brief Function homework3::exampleShmAllocator
+*/
+
 #include "example_interprocess_allocators.h"
 
 #include <boost/functional/hash.hpp>

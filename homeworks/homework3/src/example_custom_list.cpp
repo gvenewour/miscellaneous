@@ -5,6 +5,10 @@
 #include "custom_list.h"
 #include "linear_allocator.h"
 
+/** @file
+* @brief Function homework3::exampleCustomList
+*/
+
 namespace homework3 {
     void exampleCustomList() {
         homework3::CustomList<Val> list{0, 1, 2, 3, 4, 5, 6, 7, 8};

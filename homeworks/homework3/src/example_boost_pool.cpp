@@ -1,3 +1,7 @@
+/** @file
+* @brief Function homework3::exampleFastPoolAllocator
+*/
+
 #include "common.h"
 #include "example_boost_pool.h"
 

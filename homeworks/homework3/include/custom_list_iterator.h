@@ -1,10 +1,20 @@
 #pragma once
 
+/** @file
+* @brief Class @ref homework3::impl::CustomIterator
+*/
+
 #include <iterator>
 #include "custom_list_node.h"
 
 namespace homework3 {
+
     namespace impl {
+
+        /** @brief Class homework3::impl::CustomIterator
+         * @note Можно запилить константность итераторов без дублирования кода
+         * @see @ref homework3::impl::Node, homework3::CustomList
+         */
         //NOTE: const_iterators can be implemented without duplicating code
         template<typename T> /*, bool isConst = false>*/
         class CustomIterator {
@@ -51,4 +61,3 @@ namespace homework3 {
         };
     }
 }
-

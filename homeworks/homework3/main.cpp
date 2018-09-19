@@ -1,3 +1,7 @@
+/** @file
+* @brief Решение ДЗ-03
+*/
+
 #include <iostream>
 #include <map>
 
@@ -11,9 +15,9 @@
 
 int main(int argc, char *argv[])
 {
-    using StandardMap = std::map<Key, Val>;
+    using StandardMap = std::map<homework3::Key, homework3::Val>;
     StandardMap simpleMap;
-    fill<StandardMap>(simpleMap);
+    homework3::fill<StandardMap>(simpleMap);
 
     std::cout << "=== custom allocator examples: ===" << "\n";
     homework3::examplesCustomAllocator();

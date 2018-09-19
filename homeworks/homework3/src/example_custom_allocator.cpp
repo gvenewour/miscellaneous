@@ -1,3 +1,7 @@
+/** @file
+* @brief Примеры работы std::map с @ref homework3::LinearStatefulAllocator
+*/
+
 #include <map>
 
 #include "common.h"
@@ -18,7 +22,6 @@ namespace homework3 {
 
     void exampleDefault() {
         std::cout << "==== Default allocator example ====" << "\n";
-
         CustomMap map{};
         fill<CustomMap>(map);
         std::cout << "--- map: ";

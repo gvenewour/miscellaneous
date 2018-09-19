@@ -1,15 +1,29 @@
 #pragma once
 
+/** @file
+* @brief Class @ref homework3::SimpleFixedArena
+*/
+
 #include <vector>
 #include "memory_resource.h"
 //#include <experimental/memory_resource>
 #include <iostream>
 
+
 namespace homework3 {
 
-    //no alignment, simple buffer, nothing interesting here
+    /**
+     * @brief Класс, представляющий арену фиксированного размера
+     * @note Возможность увеличения объема доступной памяти не предусмотрена
+     * @see @ref homework3::LinearStatefulAllocator
+     */
     class SimpleFixedArena : public MemoryResource {
     public:
+
+        /**
+         * @brief Конструктор.
+         * @param bytes количество байт для создания буфера фиксированного размера
+         */
         explicit SimpleFixedArena(std::size_t bytes) : _buffer(bytes), _index{0} {
             std::cout << "[arena: " << this << "] constructor for " << bytes << " bytes" << "\n";
         }
