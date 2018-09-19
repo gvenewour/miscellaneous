@@ -9,9 +9,6 @@
 
 namespace homework3 {
 
-    /** @namespace homework3::impl
-    * @brief Потроха реализации контейнера @ref homework3::impl::CustomList
-    */
     namespace impl {
 
         /** @brief Class homework3::impl::CustomIterator

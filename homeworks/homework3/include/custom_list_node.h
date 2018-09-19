@@ -7,6 +7,7 @@
 namespace homework3 {
     namespace impl {
         /**
+         * @brief Нода для кастомного списка @ref homework3::CustomList
          * @tparam T тип значения в вершинах
          */
         template<typename T>

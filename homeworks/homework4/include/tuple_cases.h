@@ -1,5 +1,9 @@
 #pragma once
 
+/** @file
+* @brief Опциональная часть ДЗ-04. Печать адресов на базе кортежей
+*/
+
 #include <iostream>
 
 #include <string>
@@ -8,13 +12,10 @@
 #include "common.h"
 #include "base_cases.h"
 
-/** \addtogroup homework4
- *  @{
- */
 
 namespace homework4 {
     namespace impl {
-        //modified example from https://en.cppreference.com/w/cpp/utility/tuple/tuple_cat
+        //https://en.cppreference.com/w/cpp/utility/tuple/tuple_cat
 
         template<class T, std::size_t N>
         struct TuplePrinter {
@@ -37,7 +38,6 @@ namespace homework4 {
             TuplePrinter<decltype(t), sizeof...(Args)>::print(t);
             std::cout << "\n";
         }
-    }
 
     template<typename T, std::size_t N = std::tuple_size<T>::value>
     struct allowed_tuple_types: std::integral_constant<bool,
@@ -47,12 +47,14 @@ namespace homework4 {
     template<typename T>
     struct allowed_tuple_types<T, 1>:
            std::integral_constant<bool, is_allowed_type<std::tuple_element_t<0, T> >::value> {};
+    }
 
+    /**
+     * @brief Печать адреса на основе кортежей
+     */
     template<typename T>
-    static typename std::enable_if_t<allowed_tuple_types<T, std::tuple_size<T>::value>::value, void>
+    typename std::enable_if_t<impl::allowed_tuple_types<T, std::tuple_size<T>::value>::value, void>
     print_ip(T address) {
         impl::print(address);
     }
 }
-
-/** @}*/

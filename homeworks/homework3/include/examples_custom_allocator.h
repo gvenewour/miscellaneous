@@ -1,7 +1,7 @@
 #pragma once
 
 /** @file
-* @brief Примеры работы std::map с кастомным аллокатором @ref homework3::LinearStateAllocator
+* @brief Примеры работы std::map с @ref homework3::LinearStatefulAllocator
 */
 
 namespace homework3 {

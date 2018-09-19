@@ -12,7 +12,7 @@
 namespace homework3 {
 
     /**
-    * @brief Кастомный аллокатор для нодовых контейнеров
+    * @brief Кастомный аллокатор. Поддерживает нодовые контейнеры
     */
     template<typename T, std::size_t maxCount>
     class LinearStatefulAllocator {

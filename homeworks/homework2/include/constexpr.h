@@ -10,7 +10,7 @@ namespace homework2 {
     /**
     * @brief Решение задачи о вычислении степени двойки через constexpr
     * @note Входит в ДЗ-2, но не относится к решению задачи о фильтрации ip
-    * @snippet{.cpp} this constexpr-example
+    * @snippet this constexpr-example
     */
 
 /* [constexpr-example] */
