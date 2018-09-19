@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Homeworks: Исходный файл /home/travis/build/gvenewour/miscellaneous/homeworks/homework3/include/arena.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Homeworks
+   </div>
+   <div id="projectbrief">Otus C++ home tasks</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_06296ad887369d0fe6ed319688dcbec9.html">travis</a></li><li class="navelem"><a class="el" href="dir_9da5c968de586c136c62b60970cbb10e.html">build</a></li><li class="navelem"><a class="el" href="dir_d147c2faca062f2abe25be971b78ccfb.html">gvenewour</a></li><li class="navelem"><a class="el" href="dir_87ec839e448f1c7e58946065d118c827.html">miscellaneous</a></li><li class="navelem"><a class="el" href="dir_07002b87f0bdb9bf06f10b0cb831da54.html">homeworks</a></li><li class="navelem"><a class="el" href="dir_52834a6bf5bf30146ddc193edac7400c.html">homework3</a></li><li class="navelem"><a class="el" href="dir_161b029956a83d3766b6f102b6e6d065.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">arena.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="arena_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="memory__resource_8h.html" title="Class homework3::MemoryResource. ">memory_resource.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">//#include &lt;experimental/memory_resource&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>homework3 {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhomework3_1_1_simple_fixed_arena.html" title="Класс, представляющий арену фиксированного размера ">SimpleFixedArena</a> : <span class="keyword">public</span> <a class="code" href="classhomework3_1_1_memory_resource.html" title="Основа для работы с любым memory resource. ">MemoryResource</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#ae8e57e9352079b0310aeaed1d5fc4283">   27</a></span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#ae8e57e9352079b0310aeaed1d5fc4283" title="Конструктор. ">SimpleFixedArena</a>(std::size_t bytes) : _buffer(bytes), _index{0} {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] constructor for &quot;</span> &lt;&lt; bytes &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#ab2d235833a893575931c122eb88b64ec">   31</a></span>&#160;        <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#ab2d235833a893575931c122eb88b64ec">~SimpleFixedArena</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] destructor &quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#a430c57ead7874a379a98dd269ae22907">   35</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#a430c57ead7874a379a98dd269ae22907" title="Проверка доступности заданного количества байт для аллокации ">available</a>(std::size_t bytes)<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keywordflow">return</span> (_buffer.size() - _index) &gt;= bytes;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#ab02230fbbcc00a549cb36d4b6fc65165">   39</a></span>&#160;        <span class="keyword">inline</span> uint8_t *<a class="code" href="classhomework3_1_1_simple_fixed_arena.html#ab02230fbbcc00a549cb36d4b6fc65165" title="Функция аллоцирования ">allocate</a>(std::size_t bytes)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classhomework3_1_1_simple_fixed_arena.html#a430c57ead7874a379a98dd269ae22907" title="Проверка доступности заданного количества байт для аллокации ">available</a>(bytes)) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                _index += bytes;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="comment">//std::cout &lt;&lt; &quot;[arena: &quot; &lt;&lt; this &lt;&lt; &quot;] allocated &quot; &lt;&lt; bytes &lt;&lt; &quot; bytes&quot; &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> (&amp;_buffer[_index - bytes]);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">throw</span> std::bad_alloc{};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#a8fe53ccd3532f4a4821cdad41c801206">   49</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#a8fe53ccd3532f4a4821cdad41c801206" title="Функция деаллоцирования ">deallocate</a>(<span class="keywordtype">void</span> *ptr, std::size_t bytes)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] attempt to deallocate &quot;</span> &lt;&lt; bytes &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            _index = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::vector&lt;uint8_t&gt; _buffer;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">size_t</span> _index;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Homeworks. Последние изменения: Ср 19 Сен 2018 13:50:59. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

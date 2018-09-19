@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../results/libhomeworks.a  CMakeFiles/homeworks.dir/src/lib.cpp.o
-/usr/bin/ranlib ../results/libhomeworks.a

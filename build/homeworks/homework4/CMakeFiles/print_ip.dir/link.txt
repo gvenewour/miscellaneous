@@ -1,1 +1,0 @@
-/usr/bin/g++  -O3 -DNDEBUG   CMakeFiles/print_ip.dir/main.cpp.o  -o ../../results/print_ip ../../results/libhomeworks.a 
