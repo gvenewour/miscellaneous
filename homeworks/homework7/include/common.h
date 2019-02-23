@@ -1,5 +1,6 @@
 #pragma once
 
+#include <ctime>
 #include <memory>
 #include <string>
 #include <vector>
@@ -10,7 +11,7 @@ namespace homework7{
 
     class Observer {
     public:
-        virtual void update(const bulk_t&) = 0;
+        virtual void update(const std::time_t&, const bulk_t&) = 0;
     };
 
     class Subject {

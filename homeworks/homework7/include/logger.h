@@ -15,8 +15,8 @@ namespace homework7 {
 
     class ConsoleLogger: public Observer {
     public:
-        void update(const bulk_t& bulk) override {
-            std::cout << "bulk: ";
+        void update(const std::time_t& timestamp, const bulk_t& bulk) override {
+            std::cout << "bulk [" << timestamp << "]: ";
             for (const auto& el: bulk) {
                 std::cout << el << " ";
             }
@@ -26,7 +26,7 @@ namespace homework7 {
 
     class FileLogger: public Observer {
     public:
-        void update(const bulk_t& bulk) override {
+        void update(const std::time_t& timestamp, const bulk_t& bulk) override {
             //TODO: FILESYSTEM
         }
     };

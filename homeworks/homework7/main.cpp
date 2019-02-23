@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    std::cout << argv[1] << std::endl;
+    std::cout << sizeof(std::time_t) << std::endl;
 
     const uint64_t chunksMaxDefault = strtoul(argv[1], nullptr, 10);
 

@@ -20,7 +20,7 @@ namespace homework7 {
 
         void stash(std::string&& token) override {
             if (_bulk.empty()) {
-                //TODO: save timestamp
+                _timestamp = std::time(nullptr);
             }
 
             _bulk.emplace_back(std::move(token));
@@ -36,10 +36,13 @@ namespace homework7 {
     private:
         void _notify() override {
             for (auto& logger: _observers) {
-                logger->update(_bulk);
+                logger->update(_timestamp, _bulk);
             }
         }
 
+
+        //NOTE: the year is 2018, so we're gonna be okay
+        std::time_t _timestamp;
         bulk_t _bulk;
     };
 }
