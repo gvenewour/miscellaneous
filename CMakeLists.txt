@@ -10,7 +10,7 @@ project(homeworks VERSION 0.0.${VERSION_PATCH})
 
 set(LIB ${PROJECT_NAME})
 
-add_subdirectory(gtest)
+add_subdirectory(external/gtest)
 
 include_directories("${CMAKE_SOURCE_DIR}/lib/include"
                     ${CMAKE_BINARY_DIR}     #version.h
