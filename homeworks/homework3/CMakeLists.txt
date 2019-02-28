@@ -25,7 +25,7 @@ set(HEADERS "include/common.h"
             "include/example_custom_list.h"
      )
 set(SRC "src/example_boost_pool.cpp"
-         "src/example_custom_allocator.cpp"
+         "src/examples_custom_allocator.cpp"
          "src/example_interprocess_allocators.cpp"
          "src/example_custom_list.cpp"
     )

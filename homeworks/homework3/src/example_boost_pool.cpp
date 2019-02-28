@@ -2,6 +2,8 @@
 * @brief Function homework3::exampleFastPoolAllocator
 */
 
+#include <map>
+
 #include "common.h"
 #include "example_boost_pool.h"
 
@@ -15,7 +17,7 @@ namespace homework3 {
 
         BoostMap map;
         fill<BoostMap>(map);
-        print<BoostMap>(map);
+        LOG(INFO) << print<BoostMap>(map);
 
         boost::singleton_pool<boost::fast_pool_allocator_tag, sizeof(Val)>::purge_memory();
     }

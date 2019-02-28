@@ -6,8 +6,13 @@
 
 #include <cstdint>
 #include <iostream>
+#include <sstream>
+
+#include "easylogging++.h"
 
 namespace homework3 {
+
+    constexpr auto maxVerbosityLevel = 9;
 
     /**
      * @brief Тип ключа в нодовых контейнерах ДЗ-3
@@ -46,11 +51,18 @@ namespace homework3 {
      * @brief Выводит элементы контейнера map в формате [ключ значение]
     */
     template<typename T>
-    void print(T &map) {
+    std::string print(T &map) {
+        std::ostringstream log;
         for (const auto &it : map) {
-            std::cout << "[" << it.first << " " << it.second << "] ";
+            log << "[" << it.first << " " << it.second << "] ";
         }
-        std::cout << "\n";
+        return log.str();
+    }
+
+    inline std::string strafeLog(const std::string& str) {
+        std::ostringstream log;
+        log << "    " << str;
+        return log.str();
     }
 
 }

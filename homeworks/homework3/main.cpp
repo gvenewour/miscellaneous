@@ -12,23 +12,32 @@
 #include "example_boost_pool.h"
 #include "example_interprocess_allocators.h"
 
+INITIALIZE_EASYLOGGINGPP
 
 int main(int argc, char *argv[])
 {
+    START_EASYLOGGINGPP(argc, argv);
+
     using StandardMap = std::map<homework3::Key, homework3::Val>;
     StandardMap simpleMap;
     homework3::fill<StandardMap>(simpleMap);
 
-    std::cout << "=== custom allocator examples: ===" << "\n";
+    LOG(INFO) << "=== Custom allocator examples: ===";
     homework3::examplesCustomAllocator();
-    std::cout << "=== custom list example: ===" << "\n";
+
+    LOG(INFO) << "\n";
+
+    LOG(INFO) << "=== custom list example: ===";
     homework3::exampleCustomList();
+    LOG(INFO) << "\n";
 
-    std::cout << "=== boost fast_pool_allocator example: ===" << "\n";
+    LOG(INFO) << "=== boost fast_pool_allocator example: ===";
     homework3::exampleFastPoolAllocator();
+    LOG(INFO) << "\n";
 
-    std::cout << "=== boost interprocess allocator for nested containers example: ===" << "\n";
+    LOG(INFO) << "=== boost interprocess allocator for nested containers example: ===";
     homework3::exampleShmAllocator();
+    LOG(INFO) << "\n";
 
     return 0;
 }

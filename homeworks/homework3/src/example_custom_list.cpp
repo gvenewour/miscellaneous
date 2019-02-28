@@ -1,6 +1,7 @@
 #include "example_custom_list.h"
 
 #include <algorithm>
+
 #include "common.h"
 #include "custom_list.h"
 #include "linear_allocator.h"
@@ -19,7 +20,7 @@ namespace homework3 {
             customList.insert(i);
         }
 
-        std::replace(customList.begin(), customList.end(), 100, 4);    //works!
+        std::replace(customList.begin(), customList.end(), 100, 4);
 
         for (const auto& it: customList) {
             std::cout << it << " ";
