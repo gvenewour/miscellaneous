@@ -23,6 +23,7 @@ macro(generate_project NAME EXECUTABLE HEADERS SRC ADDITIONAL_LIBS)
                             CXX_STANDARD_REQUIRED ON
                             COMPILE_OPTIONS -Wpedantic -Wall -Wextra
                           )
+    target_compile_definitions(${TEST_EXECUTABLE} PRIVATE ELPP_DISABLE_LOGS=1)
 
     install(TARGETS ${EXECUTABLE} DESTINATION ${INSTALL_PATH}/${INSTALL_BIN_DIR})
 

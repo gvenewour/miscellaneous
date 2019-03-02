@@ -73,27 +73,27 @@ namespace homework3 {
         //std::cout << "src is valid: "; print<CustomMap>(src);
     }
 
-    void exampleSwap() {
-        LOG(INFO) << "--- Container swap example ---";
-
-        LOG(INFO) << "constructing src1";
-        CustomMap src1;
-        fill<CustomMap>(src1);
-        src1[0] = 12345;
-
-        LOG(INFO) << "constructing src2";
-
-        CustomMap src2;
-        fill<CustomMap>(src2);
-
-        LOG(INFO) << "src1 before swap: "  << toKeyValString<CustomMap>(src1);
-        LOG(INFO) << "src2 before swap: "  << toKeyValString<CustomMap>(src2);
-
-        std::swap(src1, src2);
-
-        LOG(INFO) << "src1 after swap: " << toKeyValString<CustomMap>(src1);
-        LOG(INFO) << "src2 after swap: " << toKeyValString<CustomMap>(src2);
-    }
+//    void exampleSwap() {
+//        LOG(INFO) << "--- Container swap example ---";
+//
+//        LOG(INFO) << "constructing src1";
+//        CustomMap src1;
+//        fill<CustomMap>(src1);
+//        src1[0] = 12345;
+//
+//        LOG(INFO) << "constructing src2";
+//
+//        CustomMap src2;
+//        fill<CustomMap>(src2);
+//
+//        LOG(INFO) << "src1 before swap: "  << toKeyValString<CustomMap>(src1);
+//        LOG(INFO) << "src2 before swap: "  << toKeyValString<CustomMap>(src2);
+//
+//        std::swap(src1, src2);
+//
+//        LOG(INFO) << "src1 after swap: " << toKeyValString<CustomMap>(src1);
+//        LOG(INFO) << "src2 after swap: " << toKeyValString<CustomMap>(src2);
+//    }
 
     void exampleCopyAssignment() {
         LOG(INFO) << "constructing src";

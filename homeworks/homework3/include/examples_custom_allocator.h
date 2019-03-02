@@ -10,7 +10,7 @@ namespace homework3 {
     void exampleDefault();
     void exampleCopyCtor();
     void exampleMoveCtor();
-    void exampleSwap();
+    //void exampleSwap();
     void exampleCopyAssignment();
     void exampleMoveAssignment();
 }

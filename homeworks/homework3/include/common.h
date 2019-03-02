@@ -11,7 +11,9 @@
 #include "easylogging++.h"
 
 namespace homework3 {
-
+    /**
+     * @brief Уровень выставляется при использовании параметра командной строки --verbose
+     */
     constexpr uint_least8_t MaxVerbosity = 9;
 
     /**
@@ -58,5 +60,4 @@ namespace homework3 {
         }
         return log.str();
     }
-
 }

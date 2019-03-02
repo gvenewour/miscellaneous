@@ -25,6 +25,8 @@ void CustomList<T, A>::_insert(node_type **node, T val) {
         tmp->next = nullptr;
         *node = tmp;
 
+        ++_size;
+
         if (!_last) {
             _last = _root;
         }

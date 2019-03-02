@@ -33,7 +33,7 @@ namespace homework3 {
             /**
              * @brief Конструктор по умолчанию
              */
-            CustomList() : _reboundAllocator(), _root{nullptr}, _last{nullptr}{};
+            CustomList() : _reboundAllocator(), _root{nullptr}, _last{nullptr}, _size{0}{};
 
             /**
              * @brief Конструктор с поддержкой списка инициализации
@@ -78,6 +78,10 @@ namespace homework3 {
                 return iterator(nullptr);
             }
 
+            std::size_t size() const {
+                return _size;
+            }
+
 //          const_iterator begin() const
 //          {
 //              return const_iterator(_root);
@@ -92,6 +96,7 @@ namespace homework3 {
 //            A _allocator;
             rebound_alloc_type _reboundAllocator;
             node_type *_root, *_last;
+            std::size_t _size;
     };
 
     #include "custom_list.tpp"
