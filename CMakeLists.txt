@@ -10,12 +10,13 @@ project(homeworks VERSION 0.0.${VERSION_PATCH})
 
 set(LIB ${PROJECT_NAME})
 
-add_subdirectory(gtest)
+add_subdirectory(external/gtest)
 
 include_directories("${CMAKE_SOURCE_DIR}/lib/include"
                     ${CMAKE_BINARY_DIR}     #version.h
                     ${gtest_SOURCE_DIR}
-                    ${gtest_SOURCE_DIR}/include)
+                    ${gtest_SOURCE_DIR}/include
+                    ${CMAKE_SOURCE_DIR}/external/easyloggingpp)
 
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/results)
 SET(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_BINARY_DIR}/results)

@@ -6,8 +6,13 @@
 
 #include <cstdint>
 #include <iostream>
+#include <sstream>
+
+#include "easylogging++.h"
 
 namespace homework3 {
+
+    constexpr uint_least8_t MaxVerbosity = 9;
 
     /**
      * @brief Тип ключа в нодовых контейнерах ДЗ-3
@@ -22,7 +27,7 @@ namespace homework3 {
     /**
      * @brief Верхняя граница количества элементов в контейнерах ДЗ-3
     */
-    constexpr uint8_t maxCount{10};
+    constexpr uint_least8_t maxCount{10};
 
     /**
      * @brief Тривиальная функция вычисления факториала
@@ -43,14 +48,15 @@ namespace homework3 {
     }
 
     /**
-     * @brief Выводит элементы контейнера map в формате [ключ значение]
+     * @brief Формирует строку из элементов контейнера map в формате [ключ значение]
     */
     template<typename T>
-    void print(T &map) {
+    std::string toKeyValString(T &map) {
+        std::ostringstream log;
         for (const auto &it : map) {
-            std::cout << "[" << it.first << " " << it.second << "] ";
+            log << "[" << it.first << " " << it.second << "] ";
         }
-        std::cout << "\n";
+        return log.str();
     }
 
 }

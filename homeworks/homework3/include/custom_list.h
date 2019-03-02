@@ -7,7 +7,6 @@
 #include <initializer_list>
 #include <iterator>
 #include <memory>
-#include <list>
 
 #include "custom_list_node.h"
 #include "custom_list_iterator.h"

@@ -25,11 +25,11 @@ namespace homework3 {
          * @param bytes количество байт для создания буфера фиксированного размера
          */
         explicit SimpleFixedArena(std::size_t bytes) : _buffer(bytes), _index{0} {
-            std::cout << "[arena: " << this << "] constructor for " << bytes << " bytes" << "\n";
+            LOG(INFO) << "[arena: " << this << "] constructor for " << bytes << " bytes";
         }
 
         ~SimpleFixedArena() override {
-            std::cout << "[arena: " << this << "] destructor " << "\n";
+            LOG(INFO) << "[arena: " << this << "] destructor ";
         }
 
         inline bool available(std::size_t bytes) const override {
@@ -40,14 +40,16 @@ namespace homework3 {
             if (available(bytes)) {
                 _index += bytes;
 
-                //std::cout << "[arena: " << this << "] allocated " << bytes << " bytes" << "\n";
+                //VLOG(maxVerbosityLevel) << "[arena: " << this << "] allocated " << bytes << " bytes";
                 return (&_buffer[_index - bytes]);
             }
             throw std::bad_alloc{};
         }
 
         void deallocate(void *ptr, std::size_t bytes) override {
-            std::cout << "[arena: " << this << "] attempt to deallocate " << bytes << " bytes" << "\n";
+            if (VLOG_IS_ON(MaxVerbosity)) {
+                LOG(TRACE) << "[arena: " << this << "] attempt to deallocate " << bytes << " bytes";
+            }
 
             _index = 0;
         };
