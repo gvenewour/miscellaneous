@@ -14,30 +14,33 @@
 
 INITIALIZE_EASYLOGGINGPP
 
+void reconfigureLog() {
+    el::Configurations logConf;
+    logConf.setToDefault();
+    logConf.setGlobally(el::ConfigurationType::Format, "%datetime{%Y-%M-%d %H:%m:%s} %level     %msg");
+    el::Loggers::reconfigureLogger("default", logConf);
+}
+
 int main(int argc, char *argv[])
 {
     START_EASYLOGGINGPP(argc, argv);
+    reconfigureLog();
 
     using StandardMap = std::map<homework3::Key, homework3::Val>;
     StandardMap simpleMap;
     homework3::fill<StandardMap>(simpleMap);
 
-    LOG(INFO) << "=== Custom allocator examples: ===";
+    LOG(INFO) << "-   Custom allocator examples";
     homework3::examplesCustomAllocator();
 
-    LOG(INFO) << "\n";
-
-    LOG(INFO) << "=== custom list example: ===";
+    LOG(INFO) << "-   Custom list example";
     homework3::exampleCustomList();
-    LOG(INFO) << "\n";
 
-    LOG(INFO) << "=== boost fast_pool_allocator example: ===";
+    LOG(INFO) << "-   Boost fast_pool_allocator example";
     homework3::exampleFastPoolAllocator();
-    LOG(INFO) << "\n";
 
-    LOG(INFO) << "=== boost interprocess allocator for nested containers example: ===";
+    LOG(INFO) << "-   Boost interprocess allocator for nested containers example";
     homework3::exampleShmAllocator();
-    LOG(INFO) << "\n";
 
     return 0;
 }

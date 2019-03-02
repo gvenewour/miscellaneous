@@ -12,7 +12,7 @@
 
 namespace homework3 {
 
-    constexpr auto maxVerbosityLevel = 9;
+    constexpr uint_least8_t MaxVerbosity = 9;
 
     /**
      * @brief Тип ключа в нодовых контейнерах ДЗ-3
@@ -27,7 +27,7 @@ namespace homework3 {
     /**
      * @brief Верхняя граница количества элементов в контейнерах ДЗ-3
     */
-    constexpr uint8_t maxCount{10};
+    constexpr uint_least8_t maxCount{10};
 
     /**
      * @brief Тривиальная функция вычисления факториала
@@ -48,20 +48,14 @@ namespace homework3 {
     }
 
     /**
-     * @brief Выводит элементы контейнера map в формате [ключ значение]
+     * @brief Формирует строку из элементов контейнера map в формате [ключ значение]
     */
     template<typename T>
-    std::string print(T &map) {
+    std::string toKeyValString(T &map) {
         std::ostringstream log;
         for (const auto &it : map) {
             log << "[" << it.first << " " << it.second << "] ";
         }
-        return log.str();
-    }
-
-    inline std::string strafeLog(const std::string& str) {
-        std::ostringstream log;
-        log << "    " << str;
         return log.str();
     }
 

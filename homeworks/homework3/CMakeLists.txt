@@ -34,4 +34,7 @@ find_library(RT_LIBRARY rt)
 set(ADDITIONAL_LIBS ${Boost_SYSTEM_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} ${RT_LIBRARY})  #pthread rt
 
 include(${CMAKE_SOURCE_DIR}/cmake/generate_project.cmake)
+
+add_definitions(-DELPP_NO_LOG_TO_FILE)
+
 generate_project(${PROJECT_NAME} ${EXECUTABLE} "${HEADERS}" "${SRC}" "${ADDITIONAL_LIBS}")
