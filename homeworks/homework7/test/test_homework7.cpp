@@ -1,4 +1,6 @@
-//
-// Created by airell on 23/02/19.
-//
+#include "gtest/gtest.h"
 
+
+TEST(Homework7, StubTest) {
+    ASSERT_EQ(0, 0);
+}

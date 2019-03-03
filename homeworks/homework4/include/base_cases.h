@@ -39,38 +39,40 @@ namespace impl {
      * @brief Печать адреса на основе числовых типов
     */
     template<typename T>
-    typename std::enable_if_t<std::is_integral<typename std::decay<T>::type>::value, void>
-    print_ip(T&& address, bool endl = true) {
-        impl::printBytes(address);
-        if (endl) {
-            std::cout << "\n";
-        }
+    typename std::enable_if_t<std::is_integral<typename std::decay<T>::type>::value, std::string>
+    print_ip(T&& address) {
+        return impl::printBytes(address);
     }
 
     /**
      * @brief Печать адреса на основе std::string
     */
     template<typename T>
-    typename std::enable_if_t<std::is_convertible<typename std::decay<T>::type, std::string>::value, void>
-    print_ip(T&& address, bool endl = true) {
-        std::cout << address;
-        if (endl) {
-            std::cout << "\n";
-        }
+    typename std::enable_if_t<std::is_convertible<typename std::decay<T>::type, std::string>::value, std::string>
+    print_ip(T&& address) {
+        return address;
     }
 
     /**
      * @brief Печать адреса на основе контейнеров std::vector и std::list
     */
     template<typename T>
-    typename std::enable_if_t<impl::is_allowed_container<T>::value, void> print_ip(T&& address) {
+    typename std::enable_if_t<impl::is_allowed_container<T>::value, std::string>
+    print_ip(T&& address) {
         bool dot{false};
+
+        constexpr auto container {true};
+
+        std::ostringstream log;
+
         for (const auto& octet: address) {
-            std::cout << (dot ? "." : "");
+            log << (dot ? "." : "");
             dot = true;
 
-            print_ip(octet, false);
+            //NOTE: here constexpr if could really help.
+            log << impl::printBytes(octet, container);
         }
-        std::cout << "\n";
+
+        return log.str();
     }
 }

@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 
 namespace homework4 {
@@ -17,12 +18,19 @@ namespace homework4 {
 namespace impl {
     template<typename T>
     struct is_allowed_type : std::integral_constant<bool,
-            std::is_integral<T>::value ||
-            std::is_same<T, std::string>::value> {
+                                                    std::is_integral<T>::value ||
+                                                    std::is_same<T, std::string>::value> {
     };
 
     template<typename T>
-    void printBytes(T address) {
+    std::enable_if_t<std::is_convertible<typename std::decay<T>::type, std::string>::value, std::string>
+    printBytes(T address, bool raw = false) {
+        return address;
+    }
+
+    template<typename T>
+    std::enable_if_t<std::is_integral<typename std::decay<T>::type>::value, std::string>
+    printBytes(T address, bool raw = false) {
         static_assert(std::is_integral<T>::value, "we need a numeric value for bitwise operations");
 
         using unsigned_t = std::make_unsigned_t<T>;
@@ -35,15 +43,23 @@ namespace impl {
         auto rotatedValue{0};
         auto octet{0};
 
-        for (uint8_t i = 1; i <= sizeof(unsigned_t); ++i) {
-            shift = CHAR_BIT * i;
-            rotatedValue = (value << shift) | (value >> (NBITS - shift));
-            octet = rotatedValue & MASK;
+        std::ostringstream log;
 
-            std::cout << octet;
+        if (raw) {
+            log << +value;
+        } else {
+            for (uint8_t i = 1; i <= sizeof(unsigned_t); ++i) {
+                shift = CHAR_BIT * i;
+                rotatedValue = (value << shift) | (value >> (NBITS - shift));
+                octet = rotatedValue & MASK;
 
-            std::cout << (i < sizeof(unsigned_t) ? "." : "");
+                log << octet;
+
+                log << (i < sizeof(unsigned_t) ? "." : "");
+            }
         }
+
+        return log.str();
     }
 }
 }
