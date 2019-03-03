@@ -56,40 +56,44 @@
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>homework3 {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">   15</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671" title="Тип ключа в нодовых контейнерах ДЗ-3. ">Key</a> = int;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2">   20</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2" title="Тип значения в нодовых контейнерах ДЗ-3. ">Val</a> = int;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="namespacehomework3.html#a25fc276077085b1a53ee9820b2951812">   25</a></span>&#160;    constexpr uint8_t <a class="code" href="namespacehomework3.html#a25fc276077085b1a53ee9820b2951812" title="Верхняя граница количества элементов в контейнерах ДЗ-3. ">maxCount</a>{10};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//tgamma = (n-1)!</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02">   31</a></span>&#160;    constexpr <span class="keywordtype">int</span> <a class="code" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02" title="Тривиальная функция вычисления факториала ">factorial</a>(<span class="keywordtype">int</span> n) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> n &gt; 0 ? n * <a class="code" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02" title="Тривиальная функция вычисления факториала ">factorial</a>(n - 1) : 1;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespacehomework3.html#abd05d6167a6ad4d0bbf0ffbc1e2a39b0">   39</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehomework3.html#abd05d6167a6ad4d0bbf0ffbc1e2a39b0" title="Заполняет контейнер map ключами от 0 до homework3::maxCount и значениями homework3::factorial() ...">fill</a>(T &amp;map) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; <a class="code" href="namespacehomework3.html#a25fc276077085b1a53ee9820b2951812" title="Верхняя граница количества элементов в контейнерах ДЗ-3. ">maxCount</a>; ++i) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            map[i] = <a class="code" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02" title="Тривиальная функция вычисления факториала ">factorial</a>(i);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="namespacehomework3.html#a071441480ca3a5742102588c9d7adb4d">   49</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehomework3.html#a071441480ca3a5742102588c9d7adb4d" title="Выводит элементы контейнера map в формате [ключ значение]. ">print</a>(T &amp;map) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;it : map) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; it.first &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; it.second &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;easylogging++.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>homework3 {</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespacehomework3.html#ad9d37bdf342b9c4f1f01b781fcf82230">   17</a></span>&#160;    constexpr uint_least8_t <a class="code" href="namespacehomework3.html#ad9d37bdf342b9c4f1f01b781fcf82230" title="Уровень выставляется при использовании параметра командной строки –verbose. ">MaxVerbosity</a> = 9;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671">   22</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacehomework3.html#ac012e17e67185c09cf533973150dc671" title="Тип ключа в нодовых контейнерах ДЗ-3. ">Key</a> = int;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2">   27</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespacehomework3.html#a55af0837f7cdf49c5a1ca9af7fd8a3e2" title="Тип значения в нодовых контейнерах ДЗ-3. ">Val</a> = int;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="namespacehomework3.html#ab87f15ded8d3ee34dacedf021698be04">   32</a></span>&#160;    constexpr uint_least8_t <a class="code" href="namespacehomework3.html#ab87f15ded8d3ee34dacedf021698be04" title="Верхняя граница количества элементов в контейнерах ДЗ-3. ">maxCount</a>{10};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//tgamma = (n-1)!</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02">   38</a></span>&#160;    constexpr <span class="keywordtype">int</span> <a class="code" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02" title="Тривиальная функция вычисления факториала ">factorial</a>(<span class="keywordtype">int</span> n) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> n &gt; 0 ? n * <a class="code" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02" title="Тривиальная функция вычисления факториала ">factorial</a>(n - 1) : 1;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="namespacehomework3.html#abd05d6167a6ad4d0bbf0ffbc1e2a39b0">   46</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehomework3.html#abd05d6167a6ad4d0bbf0ffbc1e2a39b0" title="Заполняет контейнер map ключами от 0 до homework3::maxCount и значениями homework3::factorial() ...">fill</a>(T &amp;map) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; <a class="code" href="namespacehomework3.html#ab87f15ded8d3ee34dacedf021698be04" title="Верхняя граница количества элементов в контейнерах ДЗ-3. ">maxCount</a>; ++i) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            map[i] = <a class="code" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02" title="Тривиальная функция вычисления факториала ">factorial</a>(i);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="namespacehomework3.html#a4c49f98bf233ab6216a018b6a81f070d">   56</a></span>&#160;    std::string <a class="code" href="namespacehomework3.html#a4c49f98bf233ab6216a018b6a81f070d" title="Формирует строку из элементов контейнера map в формате [ключ значение]. ">toKeyValString</a>(T &amp;map) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::ostringstream log;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;it : map) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            log &lt;&lt; <span class="stringliteral">&quot;[&quot;</span> &lt;&lt; it.first &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; it.second &lt;&lt; <span class="stringliteral">&quot;] &quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> log.str();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по Homeworks. Последние изменения: Сб 23 Фев 2019 14:13:50. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

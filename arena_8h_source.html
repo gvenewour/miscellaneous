@@ -66,11 +66,11 @@
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#ae8e57e9352079b0310aeaed1d5fc4283">   27</a></span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#ae8e57e9352079b0310aeaed1d5fc4283" title="Конструктор. ">SimpleFixedArena</a>(std::size_t bytes) : _buffer(bytes), _index{0} {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] constructor for &quot;</span> &lt;&lt; bytes &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] constructor for &quot;</span> &lt;&lt; bytes &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#ab2d235833a893575931c122eb88b64ec">   31</a></span>&#160;        <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#ab2d235833a893575931c122eb88b64ec">~SimpleFixedArena</a>()<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] destructor &quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] destructor &quot;</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#a430c57ead7874a379a98dd269ae22907">   35</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#a430c57ead7874a379a98dd269ae22907" title="Проверка доступности заданного количества байт для аллокации ">available</a>(std::size_t bytes)<span class="keyword"> const override </span>{</div>
@@ -81,28 +81,30 @@
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classhomework3_1_1_simple_fixed_arena.html#a430c57ead7874a379a98dd269ae22907" title="Проверка доступности заданного количества байт для аллокации ">available</a>(bytes)) {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                _index += bytes;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="comment">//std::cout &lt;&lt; &quot;[arena: &quot; &lt;&lt; this &lt;&lt; &quot;] allocated &quot; &lt;&lt; bytes &lt;&lt; &quot; bytes&quot; &lt;&lt; &quot;\n&quot;;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="comment">//VLOG(maxVerbosityLevel) &lt;&lt; &quot;[arena: &quot; &lt;&lt; this &lt;&lt; &quot;] allocated &quot; &lt;&lt; bytes &lt;&lt; &quot; bytes&quot;;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">return</span> (&amp;_buffer[_index - bytes]);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">throw</span> std::bad_alloc{};</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classhomework3_1_1_simple_fixed_arena.html#a8fe53ccd3532f4a4821cdad41c801206">   49</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhomework3_1_1_simple_fixed_arena.html#a8fe53ccd3532f4a4821cdad41c801206" title="Функция деаллоцирования ">deallocate</a>(<span class="keywordtype">void</span> *ptr, std::size_t bytes)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] attempt to deallocate &quot;</span> &lt;&lt; bytes &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span> &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            _index = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::vector&lt;uint8_t&gt; _buffer;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordtype">size_t</span> _index;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (VLOG_IS_ON(<a class="code" href="namespacehomework3.html#ad9d37bdf342b9c4f1f01b781fcf82230" title="Уровень выставляется при использовании параметра командной строки –verbose. ">MaxVerbosity</a>)) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                LOG(TRACE) &lt;&lt; <span class="stringliteral">&quot;[arena: &quot;</span> &lt;&lt; <span class="keyword">this</span> &lt;&lt; <span class="stringliteral">&quot;] attempt to deallocate &quot;</span> &lt;&lt; bytes &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            _index = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        };</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::vector&lt;uint8_t&gt; _buffer;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordtype">size_t</span> _index;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    };</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по Homeworks. Последние изменения: Сб 23 Фев 2019 14:13:50. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

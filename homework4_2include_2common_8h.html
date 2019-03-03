@@ -64,6 +64,7 @@
 <code>#include &lt;type_traits&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;string&gt;</code><br/>
+<code>#include &lt;sstream&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для common.h:</div>
 <div class="dyncontent">
@@ -76,7 +77,7 @@
 <div class="dyncontent">
 <div class="center"><img src="homework4_2include_2common_8h__dep__incl.png" border="0" usemap="#_2home_2travis_2build_2gvenewour_2miscellaneous_2homeworks_2homework4_2include_2common_8hdep" alt=""/></div>
 <map name="_2home_2travis_2build_2gvenewour_2miscellaneous_2homeworks_2homework4_2include_2common_8hdep" id="_2home_2travis_2build_2gvenewour_2miscellaneous_2homeworks_2homework4_2include_2common_8hdep">
-<area shape="rect" id="node2" href="base__cases_8h.html" title="Основная часть ДЗ&#45;04: печать адресов на базе чисел, строк и контейнеров std::vector, std::list. " alt="" coords="147,126,356,197"/><area shape="rect" id="node3" href="tuple__cases_8h.html" title="Опциональная часть ДЗ&#45;04. Печать адресов на базе кортежей " alt="" coords="5,246,213,317"/><area shape="rect" id="node4" href="homework4_2main_8cpp.html" title="Решение ДЗ&#45;04. " alt="" coords="69,365,291,421"/></map>
+<area shape="rect" id="node2" href="base__cases_8h.html" title="Основная часть ДЗ&#45;04: печать адресов на базе чисел, строк и контейнеров std::vector, std::list. " alt="" coords="163,126,372,197"/><area shape="rect" id="node3" href="tuple__cases_8h.html" title="Опциональная часть ДЗ&#45;04. Печать адресов на базе кортежей " alt="" coords="21,246,229,317"/><area shape="rect" id="node4" href="homework4_2main_8cpp.html" title="Решение ДЗ&#45;04. " alt="" coords="5,373,227,429"/><area shape="rect" id="node5" href="test__homework4_8cpp.html" title="/home/travis/build\l/gvenewour/miscellaneous\l/homeworks/homework4/test\l/test_homework4.cpp" alt="" coords="251,366,441,437"/></map>
 </div>
 </div>
 <p><a href="homework4_2include_2common_8h_source.html">См. исходные тексты.</a></p>
@@ -97,14 +98,24 @@
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a637ef1de8b286cbd7bd82b2b30e7f7b0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a637ef1de8b286cbd7bd82b2b30e7f7b0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#a637ef1de8b286cbd7bd82b2b30e7f7b0">homework4::impl::printBytes</a> (T address)</td></tr>
-<tr class="separator:a637ef1de8b286cbd7bd82b2b30e7f7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95266137b2c5a612e4b04d41ed9588d6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a95266137b2c5a612e4b04d41ed9588d6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t<br class="typebreak"/>
+&lt; std::is_convertible<br class="typebreak"/>
+&lt; typename std::decay&lt; T &gt;<br class="typebreak"/>
+::type, std::string &gt;::value, <br class="typebreak"/>
+std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#a95266137b2c5a612e4b04d41ed9588d6">homework4::impl::printBytes</a> (T address, bool raw=false)</td></tr>
+<tr class="separator:a95266137b2c5a612e4b04d41ed9588d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3aba40796ea8ae530de423aa3285f03"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac3aba40796ea8ae530de423aa3285f03"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t<br class="typebreak"/>
+&lt; std::is_integral&lt; typename <br class="typebreak"/>
+std::decay&lt; T &gt;::type &gt;::value, <br class="typebreak"/>
+std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#ac3aba40796ea8ae530de423aa3285f03">homework4::impl::printBytes</a> (T address, bool raw=false)</td></tr>
+<tr class="separator:ac3aba40796ea8ae530de423aa3285f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по Homeworks. Последние изменения: Сб 23 Фев 2019 14:13:50. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -58,10 +58,12 @@
 </div><!--header-->
 <div class="contents">
 
-<p>Functions <a class="el" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02">homework3::factorial()</a>, <a class="el" href="namespacehomework3.html#abd05d6167a6ad4d0bbf0ffbc1e2a39b0" title="Заполняет контейнер map ключами от 0 до homework3::maxCount и значениями homework3::factorial() ...">homework3::fill()</a>, <a class="el" href="namespacehomework3.html#a071441480ca3a5742102588c9d7adb4d" title="Выводит элементы контейнера map в формате [ключ значение]. ">homework3::print()</a>  
+<p>Functions <a class="el" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02">homework3::factorial()</a>, <a class="el" href="namespacehomework3.html#abd05d6167a6ad4d0bbf0ffbc1e2a39b0" title="Заполняет контейнер map ключами от 0 до homework3::maxCount и значениями homework3::factorial() ...">homework3::fill()</a>, <a class="el" href="namespacehomework4_1_1impl.html#a6deb7b9589c3040205171fafe93fb12e">homework3::print()</a>  
 <a href="#details">Подробнее...</a></p>
 <div class="textblock"><code>#include &lt;cstdint&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
+<code>#include &lt;sstream&gt;</code><br/>
+<code>#include &quot;easylogging++.h&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Граф включаемых заголовочных файлов для common.h:</div>
 <div class="dyncontent">
@@ -94,23 +96,26 @@
 <tr class="separator:a82be091bf584caac60b1bb8f3e440e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd05d6167a6ad4d0bbf0ffbc1e2a39b0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:abd05d6167a6ad4d0bbf0ffbc1e2a39b0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework3.html#abd05d6167a6ad4d0bbf0ffbc1e2a39b0">homework3::fill</a> (T &amp;map)</td></tr>
-<tr class="memdesc:abd05d6167a6ad4d0bbf0ffbc1e2a39b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет контейнер map ключами от 0 до <a class="el" href="namespacehomework3.html#a25fc276077085b1a53ee9820b2951812">homework3::maxCount</a> и значениями <a class="el" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02">homework3::factorial()</a>  <a href="#abd05d6167a6ad4d0bbf0ffbc1e2a39b0">Подробнее...</a><br/></td></tr>
+<tr class="memdesc:abd05d6167a6ad4d0bbf0ffbc1e2a39b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заполняет контейнер map ключами от 0 до <a class="el" href="namespacehomework3.html#ab87f15ded8d3ee34dacedf021698be04">homework3::maxCount</a> и значениями <a class="el" href="namespacehomework3.html#a82be091bf584caac60b1bb8f3e440e02">homework3::factorial()</a>  <a href="#abd05d6167a6ad4d0bbf0ffbc1e2a39b0">Подробнее...</a><br/></td></tr>
 <tr class="separator:abd05d6167a6ad4d0bbf0ffbc1e2a39b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a071441480ca3a5742102588c9d7adb4d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a071441480ca3a5742102588c9d7adb4d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework3.html#a071441480ca3a5742102588c9d7adb4d">homework3::print</a> (T &amp;map)</td></tr>
-<tr class="memdesc:a071441480ca3a5742102588c9d7adb4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит элементы контейнера map в формате [ключ значение].  <a href="#a071441480ca3a5742102588c9d7adb4d">Подробнее...</a><br/></td></tr>
-<tr class="separator:a071441480ca3a5742102588c9d7adb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c49f98bf233ab6216a018b6a81f070d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4c49f98bf233ab6216a018b6a81f070d"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework3.html#a4c49f98bf233ab6216a018b6a81f070d">homework3::toKeyValString</a> (T &amp;map)</td></tr>
+<tr class="memdesc:a4c49f98bf233ab6216a018b6a81f070d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Формирует строку из элементов контейнера map в формате [ключ значение].  <a href="#a4c49f98bf233ab6216a018b6a81f070d">Подробнее...</a><br/></td></tr>
+<tr class="separator:a4c49f98bf233ab6216a018b6a81f070d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Переменные</h2></td></tr>
-<tr class="memitem:a25fc276077085b1a53ee9820b2951812"><td class="memItemLeft" align="right" valign="top">constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3.html#a25fc276077085b1a53ee9820b2951812">homework3::maxCount</a> {10}</td></tr>
-<tr class="memdesc:a25fc276077085b1a53ee9820b2951812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Верхняя граница количества элементов в контейнерах ДЗ-3.  <a href="#a25fc276077085b1a53ee9820b2951812">Подробнее...</a><br/></td></tr>
-<tr class="separator:a25fc276077085b1a53ee9820b2951812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9d37bdf342b9c4f1f01b781fcf82230"><td class="memItemLeft" align="right" valign="top">constexpr uint_least8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3.html#ad9d37bdf342b9c4f1f01b781fcf82230">homework3::MaxVerbosity</a> = 9</td></tr>
+<tr class="memdesc:ad9d37bdf342b9c4f1f01b781fcf82230"><td class="mdescLeft">&#160;</td><td class="mdescRight">Уровень выставляется при использовании параметра командной строки &ndash;verbose.  <a href="#ad9d37bdf342b9c4f1f01b781fcf82230">Подробнее...</a><br/></td></tr>
+<tr class="separator:ad9d37bdf342b9c4f1f01b781fcf82230"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab87f15ded8d3ee34dacedf021698be04"><td class="memItemLeft" align="right" valign="top">constexpr uint_least8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacehomework3.html#ab87f15ded8d3ee34dacedf021698be04">homework3::maxCount</a> {10}</td></tr>
+<tr class="memdesc:ab87f15ded8d3ee34dacedf021698be04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Верхняя граница количества элементов в контейнерах ДЗ-3.  <a href="#ab87f15ded8d3ee34dacedf021698be04">Подробнее...</a><br/></td></tr>
+<tr class="separator:ab87f15ded8d3ee34dacedf021698be04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по Homeworks. Последние изменения: Сб 23 Фев 2019 14:13:50. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

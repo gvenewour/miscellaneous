@@ -86,39 +86,41 @@
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">typename</span> std::enable_if_t&lt;std::is_integral&lt;typename std::decay&lt;T&gt;::type&gt;::value, <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespacehomework4.html#a9acb24e34487e96602a7eba947ce79b2">   43</a></span>&#160;    <a class="code" href="namespacehomework4.html#a9acb24e34487e96602a7eba947ce79b2" title="Печать адреса на основе числовых типов ">print_ip</a>(T&amp;&amp; address, <span class="keywordtype">bool</span> endl = <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="namespacehomework4_1_1impl.html#a637ef1de8b286cbd7bd82b2b30e7f7b0">impl::printBytes</a>(address);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (endl) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">typename</span> std::enable_if_t&lt;std::is_convertible&lt;typename std::decay&lt;T&gt;::type, std::string&gt;::value, <span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespacehomework4.html#af1c4a8277d0b3fcc2fb230315fed3cba">   55</a></span>&#160;    <a class="code" href="namespacehomework4.html#a9acb24e34487e96602a7eba947ce79b2" title="Печать адреса на основе числовых типов ">print_ip</a>(T&amp;&amp; address, <span class="keywordtype">bool</span> endl = <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::cout &lt;&lt; address;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (endl) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespacehomework4.html#a188322d4a4b58f03f722cb5cc9ad0540">   66</a></span>&#160;    <span class="keyword">typename</span> std::enable_if_t&lt;impl::is_allowed_container&lt;T&gt;::value, <span class="keywordtype">void</span>&gt; <a class="code" href="namespacehomework4.html#a9acb24e34487e96602a7eba947ce79b2" title="Печать адреса на основе числовых типов ">print_ip</a>(T&amp;&amp; address) {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">bool</span> dot{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">typename</span> std::enable_if_t&lt;std::is_integral&lt;typename std::decay&lt;T&gt;::type&gt;::value, std::string&gt;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0">   43</a></span>&#160;    <a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(T&amp;&amp; address) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespacehomework4_1_1impl.html#a95266137b2c5a612e4b04d41ed9588d6">impl::printBytes</a>(address);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">typename</span> std::enable_if_t&lt;std::is_convertible&lt;typename std::decay&lt;T&gt;::type, std::string&gt;::value, std::string&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="namespacehomework4.html#a41487fa9ea9af8de73005fd226085b8a">   52</a></span>&#160;    <a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(T&amp;&amp; address) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> address;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">typename</span> std::enable_if_t&lt;impl::is_allowed_container&lt;T&gt;::value, std::string&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="namespacehomework4.html#a25c956dd8b11ec4a2ed84cf9b553bfc5">   61</a></span>&#160;    <a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(T&amp;&amp; address) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">bool</span> dot{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        constexpr <span class="keyword">auto</span> container {<span class="keyword">true</span>};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        std::ostringstream log;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; octet: address) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            std::cout &lt;&lt; (dot ? <span class="stringliteral">&quot;.&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            log &lt;&lt; (dot ? <span class="stringliteral">&quot;.&quot;</span> : <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            dot = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <a class="code" href="namespacehomework4.html#a9acb24e34487e96602a7eba947ce79b2" title="Печать адреса на основе числовых типов ">print_ip</a>(octet, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="comment">//NOTE: here constexpr if could really help.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            log &lt;&lt; <a class="code" href="namespacehomework4_1_1impl.html#a95266137b2c5a612e4b04d41ed9588d6">impl::printBytes</a>(octet, container);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> log.str();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по Homeworks. Последние изменения: Сб 23 Фев 2019 14:13:50. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

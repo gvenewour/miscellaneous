@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>Homeworks: Исходный файл /home/travis/build/gvenewour/miscellaneous/homeworks/homework4/test/test_homework4.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="customdoxygen.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Homeworks
+   </div>
+   <div id="projectbrief">Otus C++ home tasks</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.6 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Титульная&#160;страница</span></a></li>
+      <li><a href="namespaces.html"><span>Пространства&#160;имен</span></a></li>
+      <li><a href="annotated.html"><span>Классы</span></a></li>
+      <li class="current"><a href="files.html"><span>Файлы</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Файлы</span></a></li>
+      <li><a href="globals.html"><span>Список&#160;членов&#160;всех&#160;файлов</span></a></li>
+    </ul>
+  </div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_06296ad887369d0fe6ed319688dcbec9.html">travis</a></li><li class="navelem"><a class="el" href="dir_9da5c968de586c136c62b60970cbb10e.html">build</a></li><li class="navelem"><a class="el" href="dir_d147c2faca062f2abe25be971b78ccfb.html">gvenewour</a></li><li class="navelem"><a class="el" href="dir_87ec839e448f1c7e58946065d118c827.html">miscellaneous</a></li><li class="navelem"><a class="el" href="dir_07002b87f0bdb9bf06f10b0cb831da54.html">homeworks</a></li><li class="navelem"><a class="el" href="dir_4d5464b48f77256864df5593ac10acca.html">homework4</a></li><li class="navelem"><a class="el" href="dir_abf1cb5f6113c75acd303d921dfb6fa4.html">test</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">test_homework4.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="test__homework4_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;gtest/gtest.h&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="base__cases_8h.html" title="Основная часть ДЗ-04: печать адресов на базе чисел, строк и контейнеров std::vector, std::list. ">base_cases.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="tuple__cases_8h.html" title="Опциональная часть ДЗ-04. Печать адресов на базе кортежей ">tuple_cases.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">using namespace </span>homework4;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="test__homework4_8cpp.html#ab2ba0292343310b9700583eb6b411fab">    8</a></span>&#160;<a class="code" href="test__homework4_8cpp.html#ab2ba0292343310b9700583eb6b411fab">TEST</a>(Homework4, CheckNumeric) {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(<span class="keywordtype">char</span>(-1)), <span class="stringliteral">&quot;255&quot;</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(<span class="keywordtype">short</span>(0)), <span class="stringliteral">&quot;0.0&quot;</span>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(<span class="keywordtype">int</span>(2130706433)), <span class="stringliteral">&quot;127.0.0.1&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(<span class="keywordtype">long</span>(8875824491850138409)), <span class="stringliteral">&quot;123.45.67.89.101.112.131.41&quot;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="test__homework4_8cpp.html#a51f60803f2e2d87137638957ce031550">   15</a></span>&#160;<a class="code" href="test__homework4_8cpp.html#ab2ba0292343310b9700583eb6b411fab">TEST</a>(Homework4, CheckContainers) {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(std::string{<span class="stringliteral">&quot;trololololo&quot;</span>}), <span class="stringliteral">&quot;trololololo&quot;</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(std::vector&lt;char&gt;{-1, -2, -3, -4}), <span class="stringliteral">&quot;255.254.253.252&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(std::vector&lt;std::string&gt;{<span class="stringliteral">&quot;1&quot;</span>, <span class="stringliteral">&quot;2&quot;</span>, <span class="stringliteral">&quot;3&quot;</span>, <span class="stringliteral">&quot;4&quot;</span>}), <span class="stringliteral">&quot;1.2.3.4&quot;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(std::list&lt;int&gt;{1, 2, 3, 4}), <span class="stringliteral">&quot;1.2.3.4&quot;</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(std::list&lt;std::string&gt;{<span class="stringliteral">&quot;-1&quot;</span>, <span class="stringliteral">&quot;-2&quot;</span>, <span class="stringliteral">&quot;-3&quot;</span>, <span class="stringliteral">&quot;-4&quot;</span>}), <span class="stringliteral">&quot;-1.-2.-3.-4&quot;</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="test__homework4_8cpp.html#a51170533564c6abc988f88376d82a252">   23</a></span>&#160;<a class="code" href="test__homework4_8cpp.html#ab2ba0292343310b9700583eb6b411fab">TEST</a>(Homework4, CheckTuples) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(std::make_tuple(<span class="keywordtype">int</span>(1), <span class="keywordtype">long</span>(2), <span class="keywordtype">char</span>(-3))), <span class="stringliteral">&quot;1.2.253&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ASSERT_EQ(<a class="code" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0" title="Печать адреса на основе числовых типов ">print_ip</a>(std::make_tuple(std::string{<span class="stringliteral">&quot;silent&quot;</span>}, std::string{<span class="stringliteral">&quot;hill&quot;</span>}, uint64_t(2))), <span class="stringliteral">&quot;silent.hill.2&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

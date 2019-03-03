@@ -80,22 +80,32 @@
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
-<tr class="memitem:a637ef1de8b286cbd7bd82b2b30e7f7b0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a637ef1de8b286cbd7bd82b2b30e7f7b0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#a637ef1de8b286cbd7bd82b2b30e7f7b0">printBytes</a> (T address)</td></tr>
-<tr class="separator:a637ef1de8b286cbd7bd82b2b30e7f7b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f5917caebaf5e4bcdf8c17feb823762"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
-<tr class="memitem:a3f5917caebaf5e4bcdf8c17feb823762"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#a3f5917caebaf5e4bcdf8c17feb823762">print</a> (const std::tuple&lt; Args...&gt; &amp;t)</td></tr>
-<tr class="separator:a3f5917caebaf5e4bcdf8c17feb823762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95266137b2c5a612e4b04d41ed9588d6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a95266137b2c5a612e4b04d41ed9588d6"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t<br class="typebreak"/>
+&lt; std::is_convertible<br class="typebreak"/>
+&lt; typename std::decay&lt; T &gt;<br class="typebreak"/>
+::type, std::string &gt;::value, <br class="typebreak"/>
+std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#a95266137b2c5a612e4b04d41ed9588d6">printBytes</a> (T address, bool raw=false)</td></tr>
+<tr class="separator:a95266137b2c5a612e4b04d41ed9588d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3aba40796ea8ae530de423aa3285f03"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac3aba40796ea8ae530de423aa3285f03"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t<br class="typebreak"/>
+&lt; std::is_integral&lt; typename <br class="typebreak"/>
+std::decay&lt; T &gt;::type &gt;::value, <br class="typebreak"/>
+std::string &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#ac3aba40796ea8ae530de423aa3285f03">printBytes</a> (T address, bool raw=false)</td></tr>
+<tr class="separator:ac3aba40796ea8ae530de423aa3285f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6deb7b9589c3040205171fafe93fb12e"><td class="memTemplParams" colspan="2">template&lt;class... Args&gt; </td></tr>
+<tr class="memitem:a6deb7b9589c3040205171fafe93fb12e"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacehomework4_1_1impl.html#a6deb7b9589c3040205171fafe93fb12e">print</a> (const std::tuple&lt; Args...&gt; &amp;t)</td></tr>
+<tr class="separator:a6deb7b9589c3040205171fafe93fb12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Функции</h2>
-<a class="anchor" id="a3f5917caebaf5e4bcdf8c17feb823762"></a>
+<a class="anchor" id="a6deb7b9589c3040205171fafe93fb12e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class... Args&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void homework4::impl::print </td>
+          <td class="memname">std::string homework4::impl::print </td>
           <td>(</td>
           <td class="paramtype">const std::tuple&lt; Args...&gt; &amp;&#160;</td>
           <td class="paramname"><em>t</em></td><td>)</td>
@@ -106,36 +116,76 @@ template&lt;class... Args&gt; </div>
 
 <p>См. определение в файле <a class="el" href="tuple__cases_8h_source.html">tuple_cases.h</a> строка <a class="el" href="tuple__cases_8h_source.html#l00037">37</a></p>
 
-<p>Используется в <a class="el" href="namespacehomework4.html#a014fb480c7b65810573aa594b2466603">homework4::print_ip()</a>.</p>
+<p>Используется в <a class="el" href="namespacehomework4.html#ad8689d59f55fe004f7ea52cfbc948877">homework4::print_ip()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a637ef1de8b286cbd7bd82b2b30e7f7b0"></a>
+<a class="anchor" id="a95266137b2c5a612e4b04d41ed9588d6"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void homework4::impl::printBytes </td>
+          <td class="memname">std::enable_if_t&lt;std::is_convertible&lt;typename std::decay&lt;T&gt;::type, std::string&gt;::value, std::string&gt; homework4::impl::printBytes </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>address</em></td><td>)</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>raw</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>См. определение в файле <a class="el" href="homework4_2include_2common_8h_source.html">common.h</a> строка <a class="el" href="homework4_2include_2common_8h_source.html#l00025">25</a></p>
+<p>См. определение в файле <a class="el" href="homework4_2include_2common_8h_source.html">common.h</a> строка <a class="el" href="homework4_2include_2common_8h_source.html#l00027">27</a></p>
 
-<p>Используется в <a class="el" href="namespacehomework4.html#a9acb24e34487e96602a7eba947ce79b2">homework4::print_ip()</a>.</p>
+<p>Используется в <a class="el" href="structhomework4_1_1impl_1_1_tuple_printer.html#a8efd0579793335cd13d81802bd71ff8a">homework4::impl::TuplePrinter&lt; T, N &gt;::print()</a>, <a class="el" href="structhomework4_1_1impl_1_1_tuple_printer_3_01_t_00_011_01_4.html#a3f795d9859498c739c368c32a9c94558">homework4::impl::TuplePrinter&lt; T, 1 &gt;::print()</a> и <a class="el" href="namespacehomework4.html#acbaa1d5069a00c849ab974abefc54db0">homework4::print_ip()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3aba40796ea8ae530de423aa3285f03"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::enable_if_t&lt;std::is_integral&lt;typename std::decay&lt;T&gt;::type&gt;::value, std::string&gt; homework4::impl::printBytes </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>raw</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>См. определение в файле <a class="el" href="homework4_2include_2common_8h_source.html">common.h</a> строка <a class="el" href="homework4_2include_2common_8h_source.html#l00033">33</a></p>
 
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по Homeworks. Последние изменения: Сб 23 Фев 2019 14:13:50. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

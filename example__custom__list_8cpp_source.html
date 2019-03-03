@@ -55,32 +55,45 @@
 <a href="example__custom__list_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="example__custom__list_8h.html" title="Function homework3::exampleCustomList. ">example_custom_list.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;common.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="custom__list_8h.html" title="Class homework3::CustomList. ">custom_list.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linear__allocator_8h.html" title="Class homework3::LinearStatefulAllocator. ">linear_allocator.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>homework3 {</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespacehomework3.html#aae27b618a1daf6855166355460f11153">   13</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehomework3.html#aae27b618a1daf6855166355460f11153">exampleCustomList</a>() {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classhomework3_1_1_custom_list.html" title="Кастомная реализация однонаправленного списка. Поддерживает работу с homework3::LinearStatefulAllocat...">homework3::CustomList&lt;Val&gt;</a> list{0, 1, 2, 3, 4, 5, 6, 7, 8};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        list.<a class="code" href="classhomework3_1_1_custom_list.html#a2074bf192e7f22b6ac1fc29448c2bd1e" title="Контейнер не может быть скопирован ">insert</a>(9);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classhomework3_1_1_custom_list.html" title="Кастомная реализация однонаправленного списка. Поддерживает работу с homework3::LinearStatefulAllocat...">homework3::CustomList&lt;Val, homework3::LinearStatefulAllocator&lt;Val, maxCount&gt;</a> &gt; customList{0, 1, 2, 3, 100};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 5; i &lt; <a class="code" href="namespacehomework3.html#a25fc276077085b1a53ee9820b2951812" title="Верхняя граница количества элементов в контейнерах ДЗ-3. ">maxCount</a>; ++i) {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            customList.<a class="code" href="classhomework3_1_1_custom_list.html#a2074bf192e7f22b6ac1fc29448c2bd1e" title="Контейнер не может быть скопирован ">insert</a>(i);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::replace(customList.begin(), customList.end(), 100, 4);    <span class="comment">//works!</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;common.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="custom__list_8h.html" title="Class homework3::CustomList. ">custom_list.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="linear__allocator_8h.html" title="Class homework3::LinearStatefulAllocator. ">linear_allocator.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>homework3 {</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="namespacehomework3.html#aae27b618a1daf6855166355460f11153">   14</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespacehomework3.html#aae27b618a1daf6855166355460f11153">exampleCustomList</a>() {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <a class="code" href="classhomework3_1_1_custom_list.html" title="Кастомная реализация однонаправленного списка. Поддерживает работу с homework3::LinearStatefulAllocat...">homework3::CustomList&lt;Val&gt;</a> list{0, 1, 2, 3, 4, 5, 6, 7, 8};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            list.<a class="code" href="classhomework3_1_1_custom_list.html#a2074bf192e7f22b6ac1fc29448c2bd1e" title="Контейнер не может быть скопирован ">insert</a>(9);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <a class="code" href="classhomework3_1_1_custom_list.html" title="Кастомная реализация однонаправленного списка. Поддерживает работу с homework3::LinearStatefulAllocat...">homework3::CustomList&lt;Val, homework3::LinearStatefulAllocator&lt;Val, maxCount&gt;</a> &gt; customList{0, 1, 2, 3, 100};</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 5; i &lt; <a class="code" href="namespacehomework3.html#ab87f15ded8d3ee34dacedf021698be04" title="Верхняя граница количества элементов в контейнерах ДЗ-3. ">maxCount</a>; ++i) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                customList.<a class="code" href="classhomework3_1_1_custom_list.html#a2074bf192e7f22b6ac1fc29448c2bd1e" title="Контейнер не может быть скопирован ">insert</a>(i);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; it: customList) {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            std::cout &lt;&lt; it &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">auto</span> str = [&amp;customList]() {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                std::ostringstream log;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;it: customList) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    log &lt;&lt; it &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">return</span> log.str();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            };</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;List initial state: &quot;</span> &lt;&lt; str();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            std::replace(customList.begin(), customList.end(), 100, 4);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;List after replacement: &quot;</span> &lt;&lt; str();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        LOG(INFO) &lt;&lt; <span class="stringliteral">&quot;-\n&quot;</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Документация по Homeworks. Последние изменения: Сб 23 Фев 2019 14:13:50. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+Документация по Homeworks. Последние изменения: Вс 3 Мар 2019 02:20:11. Создано системой &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
