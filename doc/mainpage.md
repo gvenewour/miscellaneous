@@ -1,1 +1,1 @@
-<img src="tasks_overview.png" alt="overview" width="800">
+<img src="https://user-images.githubusercontent.com/2414375/53973843-8d754380-4112-11e9-815f-ce502a680045.png" alt="overview" width="800">
