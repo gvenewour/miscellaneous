@@ -33,8 +33,14 @@ install:
   - sudo apt-get install -qq g++-5
   - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 90
 
+before_script:
+  # https://docs.fossa.com/docs/travisci
+  - "curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/fossas/fossa-cli/master/install.sh | sudo bash"
+
 script:
   - "./scripts/build.sh"
+  - fossa init
+  - fossa analyze --branch master
 
 after_success:
   - cd doc
