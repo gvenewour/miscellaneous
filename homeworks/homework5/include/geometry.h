@@ -11,7 +11,6 @@ namespace homework5 {
     class GeometricPrimitive {
     public:
         virtual GeometryType type() const = 0;
-//        virtual void print() const = 0;
         virtual ~GeometricPrimitive() = default;
 
         friend std::ostream& operator<< (std::ostream& os, const GeometricPrimitive& pr);
@@ -43,7 +42,12 @@ namespace homework5 {
     public:
         Line(Point start, Point end): _start {std::move(start)}, _end {std::move(end)} {}
         Line(Coordinate x1, Coordinate y1, Coordinate x2, Coordinate y2) : _start{x1, y1}, _end{x2, y2} {}
-        //TODO: include move
+
+        Line(const Line&) = default;
+        Line& operator=(const Line&) = default;
+
+        Line(Line&&) = default;
+        Line& operator=(Line&&) = default;
 
         GeometryType type() const override {
             return GeometryType::Line;

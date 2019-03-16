@@ -18,17 +18,13 @@ namespace homework5 {
     };
     constexpr const auto MaxOp {static_cast<uint_least16_t>(Operation::maxOp)};
 
-    void ViewCLI::update(bool primitivesAvailable) {
-        _primitivesAvailable = primitivesAvailable;
-    }
-
     void ViewCLI::start() {
         uint16_t tmp{0};
 
         do {
             _showDocState();
 
-            std::cout << "Print action number: " << "\n";
+            std::cout << "\nPrint action number: " << "\n";
 
             for (auto& operation: _dispatcher) {
                 if (operation.first != Operation::removeLastAdded || _primitivesAvailable) {
@@ -37,7 +33,9 @@ namespace homework5 {
             }
 
             std::cout << "0 - Exit" << "\n";
+            std::cout <<"Chosen action: ";
             std::cin >> tmp;
+            std::cout << "\n";
 
             if (!std::cin.good()) {
                 std::cout << "Invalid operation requested, terminating program" << "\n";
@@ -50,9 +48,13 @@ namespace homework5 {
                 }
                 auto operation = static_cast<Operation>(tmp);
                 _dispatcher[operation].second();
+
+                //FIXME: operation status needs to be displayed
             } else {
                 std::cout << "Please choose a valid option from the list" << "\n";
             }
+
+            std::cout << "\n";
         } while (true);
     }
 
@@ -79,19 +81,19 @@ namespace homework5 {
 
     void ViewCLI::_showDocState() {
         decltype(auto) geometry = _model->getPrimitives();
+        _primitivesAvailable = !geometry.empty();
 
         std::cout << "Current document: ";
 
-        if (geometry.empty()) {
+        if (!_primitivesAvailable) {
             std::cout << "no primitives available" << "\n";
             return;
         }
 
         std::cout << geometry.size() << " primitives (" ;
 
-        for(const auto& primitive: geometry) {
-            std::cout << "type: " << *primitive << " ";
-        }
+        for (decltype(geometry.size()) i = 0; i < geometry.size(); ++i)
+            std::cout << "type: " << *geometry[i] << (i < geometry.size() - 1 ? ", " : "");
 
         std::cout << ")\n";
     }

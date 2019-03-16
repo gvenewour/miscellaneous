@@ -1,6 +1,5 @@
 #pragma once
 
-#include "common.h"
 #include "geometry.h"
 #include "model.h"
 #include "view.h"

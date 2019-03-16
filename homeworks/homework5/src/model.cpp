@@ -1,24 +1,20 @@
 #include "model.h"
 
 namespace homework5 {
-    void DocumentModel::removeLastAdded() {
-        _primitives.pop_back();
+    int DocumentModel::importFromFile(const fs::path& path){
+        //NOTE: implement if needed
+    }
 
-        if (_primitives.empty()) {
-            _notifyObservers();
-        }
+    int DocumentModel::exportToFile(const fs::path& path) {
+        //NOTE: implement if needed
+    }
+
+    void DocumentModel::removeLastAdded() {
+        if (!_primitives.empty())
+            _primitives.pop_back();
     }
 
     void DocumentModel::removeAll() {
         _primitives.clear();
-        _notifyObservers();
-    }
-
-    void DocumentModel::removeObserver(Observer *observer) {
-        _observers.erase(std::remove_if(_observers.begin(), _observers.end(),
-                                        [observer](Observer* element) {
-                                            return (element == observer);
-                                        }),
-                         _observers.end());
     }
 }

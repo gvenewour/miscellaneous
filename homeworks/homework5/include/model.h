@@ -4,29 +4,22 @@
 #include <memory>
 #include <vector>
 
-#include "common.h"
+#include <experimental/filesystem>
+
 #include "geometry.h"
 
 namespace homework5 {
 
+    namespace fs = std::experimental::filesystem;
+
     class DocumentModel {
     public:
-//        int importFromFile() {
-//
-//        }
-//
-//        int exportToFile() {
-//
-//        }
+        int importFromFile(const fs::path& path);
+        int exportToFile(const fs::path& path);
 
         template<typename T, typename... Args>
         int addPrimitive(Args&&... args) {
-            bool updateUIRequired = _primitives.empty();
-
             _primitives.emplace_back(std::make_unique<T>(args...));
-            if (updateUIRequired) {
-                _notifyObservers();
-            }
         }
 
         const Primitives& getPrimitives() const {
@@ -36,20 +29,7 @@ namespace homework5 {
         void removeLastAdded();
         void removeAll();
 
-        void registerObserver(Observer* observer) {
-            _observers.push_back(observer);
-        }
-
-        void removeObserver(Observer* observer);
-
     protected:
-        void _notifyObservers() {
-            for (const auto& element: _observers) {
-                element->update(!_primitives.empty());
-            }
-        }
-
         Primitives _primitives;
-        std::vector<Observer*> _observers;
     };
 }

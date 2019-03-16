@@ -6,7 +6,7 @@ Controller::Controller() {
     _view.setController(this);
     _view.setModel(&_model);
 
-    _model.registerObserver(&_view);
+//    _model.registerObserver(&_view);
 }
 
 void Controller::createDoc() {
@@ -18,7 +18,7 @@ void Controller::importDoc() {
 }
 
 void Controller::importDoc(const std::string& name) {
-    //FIXME!
+    _model.importFromFile(name);
 }
 
 void Controller::exportDoc() {
@@ -26,11 +26,11 @@ void Controller::exportDoc() {
 }
 
 void Controller::exportDoc(const std::string& name) {
-    //FIXME!
+    _model.exportToFile(name);
 }
 
 void Controller::addLine() {
-    //TODO: add random coordinates
+    //NOTE: add random coordinates if necessary
     addLine(0, 0, 100, 200);
 }
 
@@ -43,7 +43,7 @@ void Controller::addLine(Coordinate x1, Coordinate y1, Coordinate x2, Coordinate
 }
 
 void Controller::addPoint() {
-    //TODO: add random coordinates
+    //NOTE: add random coordinates if necessary
     _model.addPrimitive<Point>(0, 0);
 }
 
