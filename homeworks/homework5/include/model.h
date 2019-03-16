@@ -12,6 +12,8 @@ namespace homework5 {
 
     namespace fs = std::experimental::filesystem;
 
+    constexpr const auto OK = 0;
+
     class DocumentModel {
     public:
         int importFromFile(const fs::path& path);
@@ -20,14 +22,16 @@ namespace homework5 {
         template<typename T, typename... Args>
         int addPrimitive(Args&&... args) {
             _primitives.emplace_back(std::make_unique<T>(args...));
+
+            return OK;
         }
 
         const Primitives& getPrimitives() const {
             return _primitives;
         }
 
-        void removeLastAdded();
-        void removeAll();
+        int removeLastAdded();
+        int removeAll();
 
     protected:
         Primitives _primitives;

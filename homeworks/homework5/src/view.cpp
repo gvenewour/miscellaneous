@@ -19,26 +19,28 @@ namespace homework5 {
     constexpr const auto MaxOp {static_cast<uint_least16_t>(Operation::maxOp)};
 
     void ViewCLI::start() {
+
         uint16_t tmp{0};
+        Operation request {Operation::maxOp};
+        int result {0};
 
         do {
             _showDocState();
 
             std::cout << "\nPrint action number: " << "\n";
 
-            for (auto& operation: _dispatcher) {
-                if (operation.first != Operation::removeLastAdded || _primitivesAvailable) {
+            for (const auto& operation: _dispatcher) {
+                if (_isOpAvailable(operation.first)) {
                     std::cout << static_cast<uint16_t>(operation.first) << " - " << operation.second.first << "\n";
                 }
             }
 
-            std::cout << "0 - Exit" << "\n";
-            std::cout <<"Chosen action: ";
+            std::cout << "0 - Exit" << "\n\n";
+            std::cout <<"> Chosen action: ";
             std::cin >> tmp;
-            std::cout << "\n";
 
             if (!std::cin.good()) {
-                std::cout << "Invalid operation requested, terminating program" << "\n";
+                std::cout << ">> Invalid operation requested, terminating program" << "\n";
                 return;
             }
 
@@ -46,16 +48,24 @@ namespace homework5 {
                 if (tmp == 0) {
                     return;
                 }
-                auto operation = static_cast<Operation>(tmp);
-                _dispatcher[operation].second();
+                request = static_cast<Operation>(tmp);
 
-                //FIXME: operation status needs to be displayed
+                if (_isOpAvailable(request)) {
+                    result = _dispatcher[request].second();
+                    std::cout << ">> " << (result == OK? "Operation was finished successfully" : "Operation failed") << "\n";
+                } else {
+                    std::cout << ">> Please choose a valid option from the list" << "\n";
+                }
             } else {
-                std::cout << "Please choose a valid option from the list" << "\n";
+                std::cout << ">> Please choose a valid option from the list" << "\n";
             }
 
             std::cout << "\n";
         } while (true);
+    }
+
+    bool ViewCLI::_isOpAvailable(homework5::Operation operation) {
+        return (operation != Operation::removeLastAdded || _primitivesAvailable);
     }
 
     void ViewCLI::setModel(DocumentModel *model) {
@@ -66,17 +76,15 @@ namespace homework5 {
         _controller = controller;
 
         _dispatcher[Operation::create] = std::make_pair("Create new document",
-                                                        [this](){ _controller->createDoc();});
+                                                        [this](){ return _controller->createDoc();});
         _dispatcher[Operation::import] = std::make_pair("Import new document from file",
-                                                        [this](){ _controller->importDoc();});
-//        _dispatcher[Operation::show] = std::make_pair("Show current document content",
-//                                                      [this]() {_controller->show();});
+                                                        [this](){ return _controller->importDoc();});
         _dispatcher[Operation::exportFrom] = std::make_pair("Export the current document to file",
-                                                            [this](){_controller->exportDoc();});
-        _dispatcher[Operation::addLine] = std::make_pair("Add a new line", [this](){_controller->addLine();});
-        _dispatcher[Operation::addPoint] = std::make_pair("Add a new point", [this](){_controller->addPoint();});
+                                                            [this](){return _controller->exportDoc();});
+        _dispatcher[Operation::addLine] = std::make_pair("Add a new line", [this](){return _controller->addLine();});
+        _dispatcher[Operation::addPoint] = std::make_pair("Add a new point", [this](){return _controller->addPoint();});
         _dispatcher[Operation::removeLastAdded] = std::make_pair("Remove the last added primitive",
-                                                            [this](){_controller->removeLastAdded();});
+                                                            [this](){return _controller->removeLastAdded();});
     }
 
     void ViewCLI::_showDocState() {

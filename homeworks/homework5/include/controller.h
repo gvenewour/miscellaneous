@@ -9,24 +9,22 @@ namespace homework5 {
     public:
         Controller();
 
-        void startUI() {
-            _view.start();
-        }
+        void startUI();
 
-        void createDoc();
-        void importDoc();
-        void importDoc(const std::string& name);
+        int createDoc();
+        int importDoc();
+        int importDoc(const std::string& name);
 
-        void exportDoc();
-        void exportDoc(const std::string& name);
+        int exportDoc();
+        int exportDoc(const std::string& name);
 
-        void addLine();
-        void addLine(Point start, Point end);
-        void addLine(Coordinate x1, Coordinate y1, Coordinate x2, Coordinate y2);
+        int addLine();
+        int addLine(Point start, Point end);
+        int addLine(Coordinate x1, Coordinate y1, Coordinate x2, Coordinate y2);
 
-        void addPoint();
+        int addPoint();
 
-        void removeLastAdded();
+        int removeLastAdded();
 
     private:
         ViewCLI _view;

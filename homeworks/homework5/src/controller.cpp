@@ -9,45 +9,49 @@ Controller::Controller() {
 //    _model.registerObserver(&_view);
 }
 
-void Controller::createDoc() {
-    _model.removeAll();
+void Controller::startUI() {
+    _view.start();
 }
 
-void Controller::importDoc() {
-    importDoc("default.txt");
+int Controller::createDoc() {
+    return _model.removeAll();
 }
 
-void Controller::importDoc(const std::string& name) {
-    _model.importFromFile(name);
+int Controller::importDoc() {
+    return importDoc("default.txt");
 }
 
-void Controller::exportDoc() {
-    exportDoc("default.txt");
+int Controller::importDoc(const std::string& name) {
+    return _model.importFromFile(name);
 }
 
-void Controller::exportDoc(const std::string& name) {
-    _model.exportToFile(name);
+int Controller::exportDoc() {
+    return exportDoc("default.txt");
 }
 
-void Controller::addLine() {
+int Controller::exportDoc(const std::string& name) {
+    return _model.exportToFile(name);
+}
+
+int Controller::addLine() {
     //NOTE: add random coordinates if necessary
-    addLine(0, 0, 100, 200);
+    return addLine(0, 0, 100, 200);
 }
 
-void Controller::addLine(Point start, Point end) {
-    _model.addPrimitive<Line>(start, end);
+int Controller::addLine(Point start, Point end) {
+    return _model.addPrimitive<Line>(start, end);
 }
 
-void Controller::addLine(Coordinate x1, Coordinate y1, Coordinate x2, Coordinate y2) {
-    _model.addPrimitive<Line>(x1, y1, x2, y2);
+int Controller::addLine(Coordinate x1, Coordinate y1, Coordinate x2, Coordinate y2) {
+    return _model.addPrimitive<Line>(x1, y1, x2, y2);
 }
 
-void Controller::addPoint() {
+int Controller::addPoint() {
     //NOTE: add random coordinates if necessary
-    _model.addPrimitive<Point>(0, 0);
+    return _model.addPrimitive<Point>(0, 0);
 }
 
-void Controller::removeLastAdded() {
-    _model.removeLastAdded();
+int Controller::removeLastAdded() {
+    return _model.removeLastAdded();
 }
 }

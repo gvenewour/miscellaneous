@@ -37,11 +37,13 @@ namespace homework5 {
     protected:
         void _showDocState();
 
+        bool _isOpAvailable(Operation operation);
+
         bool _primitivesAvailable;
 
         Controller* _controller;
         DocumentModel* _model;
 
-        std::map<Operation, std::pair<std::string, std::function<void()> > > _dispatcher;
+        std::map<Operation, std::pair<std::string, std::function<int()> > > _dispatcher;
     };
 }
