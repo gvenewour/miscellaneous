@@ -2,15 +2,15 @@
 
 namespace homework5 {
 
-Controller::Controller() {
-    _view.setController(this);
-    _view.setModel(&_model);
+//Controller::Controller() {
+//    _view.setController(this);
+//    _view.setModel(&_model);
 
 //    _model.registerObserver(&_view);
-}
+//}
 
-void Controller::startUI() {
-    _view.start();
+int Controller::startUI() {
+    return _view.start(&_model, this);
 }
 
 int Controller::createDoc() {

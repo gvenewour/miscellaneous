@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include <cstdint>
-#include "view.h"
+
+#include "view_cli.h"
 #include "model.h"
 #include "controller.h"
 
@@ -9,7 +10,6 @@ namespace homework5 {
     enum class Operation: std::uint_least16_t {
         create = 1,
         import,
-        //show,
         exportFrom,
         addPoint,
         addLine,
@@ -18,7 +18,12 @@ namespace homework5 {
     };
     constexpr const auto MaxOp {static_cast<uint_least16_t>(Operation::maxOp)};
 
-    void ViewCLI::start() {
+    int ViewCLI::start(DocumentModel* model, Controller* controller) {
+        if ((model == nullptr) || (controller == nullptr)) {
+            return Error::NOT_INITIALIZED;
+        }
+
+        _init(model, controller);
 
         uint16_t tmp{0};
         Operation request {Operation::maxOp};
@@ -41,18 +46,18 @@ namespace homework5 {
 
             if (!std::cin.good()) {
                 std::cout << ">> Invalid operation requested, terminating program" << "\n";
-                return;
+                return Error::INVALID_REQUEST;
             }
 
             if (tmp < MaxOp) {
                 if (tmp == 0) {
-                    return;
+                    return Error::OK;
                 }
                 request = static_cast<Operation>(tmp);
 
                 if (_isOpAvailable(request)) {
                     result = _dispatcher[request].second();
-                    std::cout << ">> " << (result == OK? "Operation was finished successfully" : "Operation failed") << "\n";
+                    std::cout << ">> " << (result == Error::OK? "Operation was finished successfully" : "Operation failed") << "\n";
                 } else {
                     std::cout << ">> Please choose a valid option from the list" << "\n";
                 }
@@ -68,11 +73,12 @@ namespace homework5 {
         return (operation != Operation::removeLastAdded || _primitivesAvailable);
     }
 
-    void ViewCLI::setModel(DocumentModel *model) {
-        _model = model;
-    }
+    int ViewCLI::_init(DocumentModel *model, Controller *controller) {
+        if ((model == nullptr) || (controller == nullptr)) {
+            return Error::NOT_INITIALIZED;
+        }
 
-    void ViewCLI::setController(Controller *controller) {
+        _model = model;
         _controller = controller;
 
         _dispatcher[Operation::create] = std::make_pair("Create new document",
@@ -87,7 +93,11 @@ namespace homework5 {
                                                             [this](){return _controller->removeLastAdded();});
     }
 
-    void ViewCLI::_showDocState() {
+    int ViewCLI::_showDocState() {
+        if (_model == nullptr || _controller == nullptr) {
+            return Error::NOT_INITIALIZED;
+        }
+
         decltype(auto) geometry = _model->getPrimitives();
         _primitivesAvailable = !geometry.empty();
 
@@ -95,7 +105,7 @@ namespace homework5 {
 
         if (!_primitivesAvailable) {
             std::cout << "no primitives available" << "\n";
-            return;
+            return Error::OK;
         }
 
         std::cout << geometry.size() << " primitives (" ;
@@ -104,6 +114,8 @@ namespace homework5 {
             std::cout << "type: " << *geometry[i] << (i < geometry.size() - 1 ? ", " : "");
 
         std::cout << ")\n";
+
+        return Error::OK;
     }
 
 

@@ -12,7 +12,7 @@ namespace homework5 {
 
     namespace fs = std::experimental::filesystem;
 
-    constexpr const auto OK = 0;
+    enum Error : int {OK = 0, NOT_INITIALIZED, INVALID_REQUEST};
 
     class DocumentModel {
     public:
@@ -23,7 +23,7 @@ namespace homework5 {
         int addPrimitive(Args&&... args) {
             _primitives.emplace_back(std::make_unique<T>(args...));
 
-            return OK;
+            return Error::OK;
         }
 
         const Primitives& getPrimitives() const {

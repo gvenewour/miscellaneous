@@ -2,14 +2,21 @@
 
 #include "geometry.h"
 #include "model.h"
-#include "view.h"
+#include "view_cli.h"
 
 namespace homework5 {
     class Controller {
     public:
-        Controller();
+        Controller() = default;
+        Controller(const Controller&) = delete;
+        Controller& operator=(const Controller&) = delete;
 
-        void startUI();
+        Controller(Controller&&) = delete;
+        Controller& operator=(Controller&&) = delete;
+
+        ~Controller() = default;
+
+        int startUI();
 
         int createDoc();
         int importDoc();
