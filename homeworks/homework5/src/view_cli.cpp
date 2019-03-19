@@ -16,7 +16,6 @@ namespace homework5 {
         removeLastAdded,
         maxOp
     };
-    constexpr const auto MaxOp {static_cast<uint_least16_t>(Operation::maxOp)};
 
     int ViewCLI::start(DocumentModel* model, Controller* controller) {
         if ((model == nullptr) || (controller == nullptr)) {
@@ -28,6 +27,8 @@ namespace homework5 {
         uint16_t tmp{0};
         Operation request {Operation::maxOp};
         int result {0};
+
+        constexpr const auto MaxOp {static_cast<uint_least16_t>(Operation::maxOp)};
 
         do {
             _showDocState();
